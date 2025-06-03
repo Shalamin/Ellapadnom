@@ -1,5 +1,6 @@
 package modele;
 
+import controleur.Alertes;
 import sae201.sae201.controleur.Principale;
 
 import java.util.Date;
@@ -17,7 +18,7 @@ public class Evenement {
         this.date = date;
         this.saison = saison;
         this.laSalle = laSalle;
-        lesBenevoles.put(organisateur, "Organisateur");
+        lesBenevoles.put("Organisateur", organisateur);
     }
 
     public String getNom() {
@@ -52,15 +53,39 @@ public class Evenement {
         this.laSalle = laSalle;
     }
 
-    private void ajouterBenevole(String tache, Benevole ben){
+    private void ajouterTache(String tache, Benevole ben){
         lesBenevoles.put(tache, ben);
     }
     public void affecterTache(String tache, Benevole ben){
-        if(ben == null && tache == null){
-            Principale.afficherErreurNull();
+        if(ben == null || tache == ""){
+            Alertes.afficherErreurNull();
         }
-        else if(lesBenevoles.get(tache) == benevole){
-            Principale.afficherErreurDejaLa();
+        else if(lesBenevoles.get(tache) == ben){
+            Alertes.afficherErreurDejaLa();
+        }
+    }
+    private void retirerTache(String tache, Benevole ben){lesBenevoles.remove(tache, ben);}
+    private void retirerTache(String tache){lesBenevoles.remove(tache);}
+    public void enleverTache(String tache, Benevole ben){
+        if(tache == "" || ben == null){
+            Alertes.afficherErreurNull();
+        }
+        else if(!lesBenevoles.containsKey(tache) || !lesBenevoles.containsValue(ben)){
+            Alertes.afficherErreurAbsent();
+        }
+        else {
+            retirerTache(tache, ben);
+        }
+    }
+    public void enleverTache(String tache){
+        if(tache == ""){
+            Alertes.afficherErreurNull();
+        }
+        else if(!lesBenevoles.containsKey(tache)){
+            Alertes.afficherErreurAbsent();
+        }
+        else {
+            retirerTache(tache);
         }
     }
 

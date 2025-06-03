@@ -28,21 +28,15 @@ public class Principale extends Application{
     public static void fermerAppli() {
         System.exit(0);
     }
-    public static void ouvrirFenPlan(String arr, String dep, int dur) {
-        arrivee = arr;
-        depart = dep;
-        duree = dur;
-        fenPlan.effeceNumEmplacement();
-        fenPlan.show();
+    public static void ouvrirFenEvent() {
+        fenEvent.show();
     }
 
-    public static void fermerPlan() {
-        fenPlan.close();
+    public static void fermerFenEvent() {
+        fenEvent.close();
     }
-    public static void ouvrirConfirmation(int emp) {
-        numEmp = emp;
-        fenConfirmation.show();
-        fenConfirmation.initFenetre(numEmp, arrivee, depart, duree);
+    public static void ouvrirFenAffectation() {
+
 
     }
     public static void fermerConfirmation() {
