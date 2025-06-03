@@ -8,9 +8,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FenAccueil extends Stage {
+public class FenetreAccueil extends Stage {
 
-    public FenAccueil() {
+    public FenetreAccueil() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
         Scene laScene = new Scene(creerSceneGraph());
