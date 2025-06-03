@@ -7,12 +7,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.HashMap;
 
-public class Evenement {
-    private String nom;
-    private Date date;
-    private String saison;
-    private Salle laSalle;
-    private HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
+public abstract class Evenement {
+    protected String nom;
+    protected Date date;
+    protected String saison;
+    protected Salle laSalle;
+    protected HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
     public Evenement(String nom, Date date, String saison, Salle laSalle, Benevole organisateur){
         this.nom = nom;
         this.date = date;
