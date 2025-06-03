@@ -3,6 +3,9 @@ module EllaDanse {
     requires javafx.fxml;
 
 
-    opens EllaDanse to javafx.fxml;
-    exports EllaDanse;
+    opens controleur to javafx.fxml;
+    exports controleur;
+
+    opens modele to javafx.fxml;
+    exports controleur;
 }
