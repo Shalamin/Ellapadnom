@@ -3,7 +3,7 @@ package controleur;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import vues.*;
+import vues.fenetres.*;
 
 public class Principale extends Application{
     static public FenAccueil fenAccueil;
