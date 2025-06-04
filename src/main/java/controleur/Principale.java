@@ -4,17 +4,16 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import vues.*;
-import modele.*;
 
 public class Principale extends Application{
-    static public FenetreAccueil fenAccueil;
+    static public FenAccueil fenAccueil;
     static public FenetreEvenement 		fenEvent;
     static public FenetreAffectation 	fenAffect;
 
 
 
     public void start(Stage f) throws IOException {
-        fenAccueil = new FenetreAccueil();
+        fenAccueil = new FenAccueil();
         fenAccueil.show();
 
     }
@@ -38,8 +37,6 @@ public class Principale extends Application{
         fenEvent.close();
     }
     public static void ouvrirFenAffectation() {
-
-
     }
     public static void fermerConfirmation() {
         fenConfirmation.close();
