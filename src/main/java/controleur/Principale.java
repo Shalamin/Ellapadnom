@@ -3,16 +3,16 @@ package controleur;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
+import vues.*;
+import modele.*;
 
 public class Principale extends Application{
-    static public FenetreAccueil		fenAccueil;
-    static public FenetreEvenement 		fenEvent;
-    static public FenetreAffectation 	fenAffect;
-
+    static public FenAccueil fenAccueil;
+    static public FenCrEvent fenCrEvent;
 
 
     public void start(Stage f) throws IOException {
-        fenAccueil = new FenetreAccueil();
+        fenAccueil = new FenAccueil();
         fenAccueil.show();
 
     }
@@ -22,34 +22,23 @@ public class Principale extends Application{
     }
 
     ////////////////////////////////////////////
-    // Gestion des fenêtres (à compléter)
+    // Gestion des fenêtres (à compléter) //
     ////////////////////////////////////////////
 
     public static void fermerAppli() {
         System.exit(0);
     }
-    public static void ouvrirFenPlan(String arr, String dep, int dur) {
-        arrivee = arr;
-        depart = dep;
-        duree = dur;
-        fenPlan.effeceNumEmplacement();
-        fenPlan.show();
+    public static void ouvrirFenEvent() {
+        fenCrEvent.show();
     }
 
-    public static void fermerPlan() {
-        fenPlan.close();
+    public static void fermerFenEvent() {
+        fenCrEvent.close();
     }
-    public static void ouvrirConfirmation(int emp) {
-        numEmp = emp;
-        fenConfirmation.show();
-        fenConfirmation.initFenetre(numEmp, arrivee, depart, duree);
-
-    }
-    public static void fermerConfirmation() {
-        fenConfirmation.close();
+    public static void ouvrirFenAffectation() {
     }
 
 
-    // enregistrement d'une réservation (se contente de l'afficher dans la console)
+
 
 }
