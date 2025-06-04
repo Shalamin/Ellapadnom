@@ -8,5 +8,10 @@ module EllaDanse {
     exports controleur;
 
     opens modele to javafx.fxml;
-    exports controleur;
+    exports modele;
+
+    opens  vues.action to javafx.fxml;
+    exports vues.action;
+    opens  vues.fenetres to javafx.fxml;
+    exports vues.fenetres;
 }

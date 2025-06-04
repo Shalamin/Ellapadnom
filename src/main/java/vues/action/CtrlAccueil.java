@@ -1,4 +1,4 @@
-package vues;
+package vues.action;
 
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
@@ -20,6 +20,9 @@ public class CtrlAccueil {
     @FXML private TableView<Evenement> tvListeEvenement;
 
     /* Relation avec le controleur */
+    @FXML void clicFermer(ActionEvent event) {
+        Main.fermerAppli();
+    }
     @FXML void clicCree(ActionEvent event){
         Principale.ouvrirFenCrEvent();
     }

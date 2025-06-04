@@ -1,4 +1,5 @@
-package vues;
+package vues.fenetres;
+
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,17 +8,20 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FenModTaches extends Stage {
-    public FenModTaches() {
+public class FenAccueil extends Stage {
+
+    public FenAccueil() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
         Scene laScene = new Scene(creerSceneGraph());
         this.setScene(laScene);
+
     }
+
     private Pane creerSceneGraph() {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/modification_tache.fxml"));
+        loader.setLocation(getClass().getResource("/fxml/acceuil.fxml"));
 
         Pane root = new Pane();
         try {
