@@ -46,18 +46,21 @@ public class CtrlAccueil {
         BooleanBinding rien =
                 Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
 
-        TableColumn<Employe,Integer> colonne1 = new TableColumn<Employe,Integer>("Matricule");
-        colonne1.setCellValueFactory(new PropertyValueFactory<Employe,Integer>("matricule"));
-        tvListeEmployes.getColumns().set(0, colonne1);
-        TableColumn<Employe, String> colonne2 = new TableColumn<Employe,String>("Nom");
-        colonne2.setCellValueFactory(new PropertyValueFactory<Employe, String>("nom"));
-        tvListeEmployes.getColumns().set(1, colonne2);
-        TableColumn<Employe, String> colonne3 = new TableColumn<Employe,String>("Poste");
-        colonne3.setCellValueFactory(new PropertyValueFactory<Employe, String>("poste"));
-        tvListeEmployes.getColumns().set(2, colonne3);
-        TableColumn<Employe,Integer> colonne4 = new TableColumn<Employe,Integer>("Département");
-        colonne4.setCellValueFactory(new PropertyValueFactory<Employe, Integer>("dept"));
-        tvListeEmployes.getColumns().set(3, colonne4);
+        TableColumn<Evenement,String> colonne1 = new TableColumn<Evenement,String>("Nom");
+        colonne1.setCellValueFactory(new PropertyValueFactory<Evenement,String>("nom"));
+        tvListeEvenement.getColumns().set(0, colonne1);
+        TableColumn<Evenement, String> colonne2 = new TableColumn<Evenement,String>("Salle");
+        colonne2.setCellValueFactory(new PropertyValueFactory<Evenement, String>("salle"));
+        tvListeEvenement.getColumns().set(1, colonne2);
+        TableColumn<Evenement, String> colonne3 = new TableColumn<Evenement,String>("Type");
+        colonne3.setCellValueFactory(new PropertyValueFactory<Evenement, String>("type"));
+        tvListeEvenement.getColumns().set(2, colonne3);
+        TableColumn<Evenement,Integer> colonne4 = new TableColumn<Evenement ,Integer>("Date");
+        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Integer>("date"));
+        tvListeEvenement.getColumns().set(3, colonne4);
+        TableColumn<Evenement,Integer> colonne5 = new TableColumn<Evenement,Integer>("Saison");
+        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Integer>("saison"));
+        tvListeEvenement.getColumns().set(3, colonne5);
 
         tvListeEvenement.setItems(Principale.getLesEvenements());
         tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
