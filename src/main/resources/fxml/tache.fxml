@@ -1,25 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="390.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlTaches">
    <children>
       <Label layoutX="151.0" layoutY="20.0" text="Affectation des tâches">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <Button layoutX="312.0" layoutY="67.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Créer..." AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0" />
-      <Button layoutX="441.0" layoutY="102.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Modifier..." AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0" />
-      <Button layoutX="357.0" layoutY="141.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Supprimer" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="160.0" />
-      <Button layoutX="367.0" layoutY="185.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Fermer" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
-      <TableView layoutX="30.0" layoutY="60.0" prefHeight="300.0" prefWidth="300.0">
+      <Button fx:id="bnCree" layoutX="312.0" layoutY="67.0" mnemonicParsing="false" onAction="#clicCree" prefHeight="30.0" prefWidth="90.0" text="Créer..." AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="60.0" />
+      <Button fx:id="bnModifier" layoutX="441.0" layoutY="102.0" mnemonicParsing="false" onAction="#clicModifier" prefHeight="30.0" prefWidth="90.0" text="Modifier..." AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="110.0" />
+      <Button fx:id="bnSupprimer" layoutX="357.0" layoutY="141.0" mnemonicParsing="false" onAction="#clicSupp" prefHeight="30.0" prefWidth="90.0" text="Supprimer" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="160.0" />
+      <Button fx:id="bnFermer" layoutX="367.0" layoutY="185.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="90.0" text="Fermer" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+      <TableView fx:id="tableTaches" layoutX="30.0" layoutY="60.0" prefHeight="300.0" prefWidth="300.0">
         <columns>
           <TableColumn prefWidth="75.0" text="Tâches" />
           <TableColumn prefWidth="75.0" text="Bénévoles" />
