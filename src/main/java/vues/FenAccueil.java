@@ -5,7 +5,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import controleur.*;
 import java.io.IOException;
 
 public class FenAccueil extends Stage {
@@ -21,7 +21,7 @@ public class FenAccueil extends Stage {
     private Pane creerSceneGraph() {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/acceuil.fxml"));
+        loader.setLocation(getClass().getResource("/fxml/accueil.fxml"));
 
         Pane root = new Pane();
         try {

@@ -4,12 +4,11 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import vues.*;
+import modele.*;
 
 public class Principale extends Application{
     static public FenAccueil fenAccueil;
-    static public FenetreEvenement 		fenEvent;
-    static public FenetreAffectation 	fenAffect;
-
+    static public FenCrEvent fenCrEvent;
 
 
     public void start(Stage f) throws IOException {
@@ -23,26 +22,23 @@ public class Principale extends Application{
     }
 
     ////////////////////////////////////////////
-    // Gestion des fenêtres (à compléter)
+    // Gestion des fenêtres (à compléter) //
     ////////////////////////////////////////////
 
     public static void fermerAppli() {
         System.exit(0);
     }
     public static void ouvrirFenEvent() {
-        fenEvent.show();
+        fenCrEvent.show();
     }
 
     public static void fermerFenEvent() {
-        fenEvent.close();
+        fenCrEvent.close();
     }
     public static void ouvrirFenAffectation() {
     }
-    public static void fermerConfirmation() {
-        fenConfirmation.close();
-    }
 
 
-    // enregistrement d'une réservation (se contente de l'afficher dans la console)
+
 
 }

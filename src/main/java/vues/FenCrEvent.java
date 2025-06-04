@@ -19,7 +19,7 @@ public class FenCrEvent extends Stage {
     private Pane creerSceneGraph() {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/creer_event.fxml"));
+        loader.setLocation(getClass().getResource("resources/fxml/creer_event.fxml"));
 
         Pane root = new Pane();
         try {

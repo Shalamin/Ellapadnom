@@ -56,14 +56,6 @@ public abstract class Evenement {
         lesBenevoles.put(tache, ben);
         ben.ajouterEventTache(this, tache);
     }
-    public void affecterTache(String tache, Benevole ben){
-        if(ben == null || tache == ""){
-            Alertes.afficherErreurNull();
-        }
-        else if(lesBenevoles.get(tache) == ben){
-            Alertes.afficherErreurDejaLa();
-        }
-    }
     private void retirerTache(String tache, Benevole ben){
         lesBenevoles.remove(tache, ben);
         ben.retirerEventTache(tache, this);
@@ -84,6 +76,15 @@ public abstract class Evenement {
     }
 
     // Publics \\
+    public void affecterTache(String tache, Benevole ben){
+        if(ben == null || tache == ""){
+            Alertes.afficherErreurNull();
+        }
+        else if(lesBenevoles.get(tache) == ben){
+            Alertes.afficherErreurDejaLa();
+        }
+    }
+
     public void enleverTache(String tache, Benevole ben){
         if(tache == "" || ben == null){
             Alertes.afficherErreurNull();
@@ -128,6 +129,11 @@ public abstract class Evenement {
     private void ajouterSalle(Salle salle){
         laSalle = salle;
     }
+    private void supprimerSalle(){
+        laSalle = null;
+
+    }
+
     public void affecterSalle(Salle salle){
         if(salle == null){
             Alertes.afficherErreurNull();
@@ -135,6 +141,15 @@ public abstract class Evenement {
         else if(laSalle == salle){
             Alertes.afficherErreurDejaLa();
         }
+        else{
+            salle.ajouterEvent(this);
+            ajouterSalle(salle);
+        }
+    }
+
+    public void retirerSalle(){
+        laSalle.retirerEvent(this);
+        supprimerSalle();
     }
 
 
