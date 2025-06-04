@@ -19,13 +19,17 @@ public class CtrlAccueil {
     @FXML private Button bnFermer;
     @FXML private TableView<Evenement> tvListeEvenement;
 
-    /* Relation avec le controlleur */
+    /* Relation avec le controleur */
     @FXML void clicCree(ActionEvent event){
         Principale.ouvrirFenCrEvent();
     }
     @FXML void clicModifier(ActionEvent event){
         Principale.ouvrirModEvent();
     }
+    @FXML void doubleClic(ActionEvent event){
+        Principale.ouvrirModEvent();
+    }
+
     @FXML void clicTache(ActionEvent event){
         Principale.ouvrirFenTaches();
     }
@@ -55,18 +59,16 @@ public class CtrlAccueil {
         TableColumn<Evenement, String> colonne3 = new TableColumn<Evenement,String>("Type");
         colonne3.setCellValueFactory(new PropertyValueFactory<Evenement, String>("type"));
         tvListeEvenement.getColumns().set(2, colonne3);
-        TableColumn<Evenement,Integer> colonne4 = new TableColumn<Evenement ,Integer>("Date");
-        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Integer>("date"));
+        TableColumn<Evenement,Date> colonne4 = new TableColumn<Evenement ,Date>("Date");
+        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Date>("date"));
         tvListeEvenement.getColumns().set(3, colonne4);
-        TableColumn<Evenement,Integer> colonne5 = new TableColumn<Evenement,Integer>("Saison");
-        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Integer>("saison"));
-        tvListeEvenement.getColumns().set(3, colonne5);
+        TableColumn<Evenement,String> colonne5 = new TableColumn<Evenement,String>("Saison");
+        colonne5.setCellValueFactory(new PropertyValueFactory<Evenement, String>("saison"));
+        tvListeEvenement.getColumns().set(4, colonne5);
 
         tvListeEvenement.setItems(Principale.getLesEvenements());
         tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
-
-        //A FAIRE griser les boutons Modifier et Supprimer quand aucune sélection
 
         bnSupprimer.disableProperty().bind(rien);
         bnModifier.disableProperty().bind(rien);
