@@ -21,7 +21,7 @@ public class CtrlAccueil {
 
     /* Relation avec le controleur */
     @FXML void clicFermer(ActionEvent event) {
-        Main.fermerAppli();
+        Principale.fermerAppli();
     }
     @FXML void clicCree(ActionEvent event){
         Principale.ouvrirFenCrEvent();

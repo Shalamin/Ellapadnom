@@ -22,11 +22,7 @@ public class CtrlTaches {
     @FXML void doubleClic(ActionEvent event){
         Principale.ouvrirModEvent();
     }
-
-    @FXML void clicTache(ActionEvent event){
-        Principale.ouvrirFenTaches();
-    }
-    @FXML void clicFermer(ActionEvent event) {
-        Main.fermerTache();
+    @FXML void clicClose(ActionEvent event) {
+        Principale.fermerTache();
     }
 }
