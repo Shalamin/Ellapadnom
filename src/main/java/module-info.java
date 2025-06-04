@@ -1,6 +1,7 @@
 module EllaDanse {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
 
 
     opens controleur to javafx.fxml;
