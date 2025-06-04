@@ -1,9 +1,14 @@
 package controleur;
 
 import java.io.IOException;
+import java.util.*;
+
 import javafx.application.Application;
+import javafx.beans.InvalidationListener;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
-import vues.*;
+import vues.fenetres.*;
 
 public class Principale extends Application{
     static public FenAccueil fenAccueil;
@@ -12,6 +17,7 @@ public class Principale extends Application{
     static public FenCrTaches fenCrTaches;
     static public FenModEvent fenModEvent;
     static public FenModTaches fenModTaches;
+
 
     public void start(Stage f) throws IOException {
         fenAccueil = new FenAccueil();
@@ -38,8 +44,15 @@ public class Principale extends Application{
     public static void fermerFenCrTaches() {fenCrTaches.close();}
     public static void fermerFenModEvent() {fenModEvent.close();}
     public static void fermerFenModTaches() {fenModTaches.close();}
+    public static void ouvrirFenCrEvent(){fenCrEvent.show();}
+    public static void ouvrirModEvent() {fenModEvent.show();}
+    public static void fermerTache(){fenTaches.close();}
+    public static void fermerAppli(){System.exit(0);}
+    public static void ouvrirFenTaches(){fenTaches.show();}
+    public static ObservableList getLesEvenements(){
 
-
+            return null;
+    }
     // enregistrement d'une réservation (se contente de l'afficher dans la console)
 
 }

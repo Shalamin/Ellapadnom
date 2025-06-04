@@ -9,6 +9,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modele.Evenement;
 
+import java.util.Date;
+
 
 public class CtrlAccueil {
 
@@ -62,7 +64,7 @@ public class CtrlAccueil {
         TableColumn<Evenement, String> colonne3 = new TableColumn<Evenement,String>("Type");
         colonne3.setCellValueFactory(new PropertyValueFactory<Evenement, String>("type"));
         tvListeEvenement.getColumns().set(2, colonne3);
-        TableColumn<Evenement,Date> colonne4 = new TableColumn<Evenement ,Date>("Date");
+        TableColumn<Evenement, Date> colonne4 = new TableColumn<Evenement ,Date>("Date");
         colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Date>("date"));
         tvListeEvenement.getColumns().set(3, colonne4);
         TableColumn<Evenement,String> colonne5 = new TableColumn<Evenement,String>("Saison");
