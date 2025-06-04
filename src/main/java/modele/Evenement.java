@@ -3,9 +3,7 @@ package modele;
 import controleur.Alertes;
 import controleur.Principale;
 
-import java.util.Date;
-import java.util.List;
-import java.util.HashMap;
+import java.util.*;
 
 public abstract class Evenement {
     protected String nom;
@@ -52,9 +50,11 @@ public abstract class Evenement {
     public void setLaSalle(Salle laSalle) {
         this.laSalle = laSalle;
     }
-
+    /// BENEVOLES \\\
+    // Privates \\
     private void ajouterTache(String tache, Benevole ben){
         lesBenevoles.put(tache, ben);
+        ben.ajouterEventTache(this, tache);
     }
     public void affecterTache(String tache, Benevole ben){
         if(ben == null || tache == ""){
@@ -64,8 +64,26 @@ public abstract class Evenement {
             Alertes.afficherErreurDejaLa();
         }
     }
-    private void retirerTache(String tache, Benevole ben){lesBenevoles.remove(tache, ben);}
-    private void retirerTache(String tache){lesBenevoles.remove(tache);}
+    private void retirerTache(String tache, Benevole ben){
+        lesBenevoles.remove(tache, ben);
+        ben.retirerEventTache(tache, this);
+
+    }
+    private void retirerTache(String tache){
+        lesBenevoles.get(tache).retirerEventTache(tache, this);
+        lesBenevoles.remove(tache);
+    }
+    private void supprimerBenevole(Benevole ben){
+        Iterator it = lesBenevoles.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+            if(pair.getValue() == ben){
+                lesBenevoles.remove(pair.getKey(), ben);
+            }
+        }
+    }
+
+    // Publics \\
     public void enleverTache(String tache, Benevole ben){
         if(tache == "" || ben == null){
             Alertes.afficherErreurNull();
@@ -75,6 +93,7 @@ public abstract class Evenement {
         }
         else {
             retirerTache(tache, ben);
+            ben.retirerEventTache(tache, this);
         }
     }
     public void enleverTache(String tache){
@@ -86,7 +105,37 @@ public abstract class Evenement {
         }
         else {
             retirerTache(tache);
+            lesBenevoles.get(tache).retirerEventTache(tache, this);
         }
     }
+    public void supprimerBenevoleEvent(Benevole ben){
+        if(ben == null){
+            Alertes.afficherErreurNull();
+        }
+        else if(!lesBenevoles.containsValue(ben)){
+            Alertes.afficherErreurAbsent();
+        }
+        else{
+            supprimerBenevole(ben);
+            ben.retirerEvent(this);
+        }
+    }
+
+
+    /// SALLE \\\
+
+
+    private void ajouterSalle(Salle salle){
+        laSalle = salle;
+    }
+    public void affecterSalle(Salle salle){
+        if(salle == null){
+            Alertes.afficherErreurNull();
+        }
+        else if(laSalle == salle){
+            Alertes.afficherErreurDejaLa();
+        }
+    }
+
 
 }
