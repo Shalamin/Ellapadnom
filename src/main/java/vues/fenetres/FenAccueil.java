@@ -1,23 +1,27 @@
-package vues;
+package vues.fenetres;
+
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
-
+import controleur.*;
 import java.io.IOException;
 
-public class FenTaches extends Stage {
-    public FenTaches() {
+public class FenAccueil extends Stage {
+
+    public FenAccueil() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
         Scene laScene = new Scene(creerSceneGraph());
         this.setScene(laScene);
+
     }
+
     private Pane creerSceneGraph() {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/tache.fxml"));
+        loader.setLocation(getClass().getResource("/fxml/accueil.fxml"));
 
         Pane root = new Pane();
         try {

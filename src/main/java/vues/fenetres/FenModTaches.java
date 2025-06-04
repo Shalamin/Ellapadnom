@@ -1,4 +1,4 @@
-package vues;
+package vues.fenetres;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;

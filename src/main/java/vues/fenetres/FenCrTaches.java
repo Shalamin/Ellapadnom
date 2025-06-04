@@ -1,4 +1,4 @@
-package vues;
+package vues.fenetres;
 
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -7,8 +7,8 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class FenModEvent extends Stage {
-    public FenModEvent() {
+public class FenCrTaches extends Stage {
+    public FenCrTaches() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
         Scene laScene = new Scene(creerSceneGraph());
@@ -17,7 +17,7 @@ public class FenModEvent extends Stage {
     private Pane creerSceneGraph() {
 
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("/fxml/modification_event.fxml"));
+        loader.setLocation(getClass().getResource("/fxml/creer_tache.fxml"));
 
         Pane root = new Pane();
         try {
