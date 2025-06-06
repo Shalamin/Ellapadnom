@@ -16,7 +16,7 @@ public class Salle {
         return nomSalle;
     }
     public String toString(){
-        return nomSalle;
+        return nomSalle + " - "+capacite;
     }
 
     /*package*/ void ajouterEvent(Evenement e){

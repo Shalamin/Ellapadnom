@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 
+import com.sun.jdi.StringReference;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -62,5 +63,17 @@ public class Principale extends Application{
 
     public static ObservableList<Evenement> getLesEvenements(){
         return lesEvenements;
+    }
+    public static ObservableList<String> getLesTypes(){
+        ObservableList<String> res = FXCollections.observableArrayList();
+        res.add("Gala");
+        res.add("Soirée dansante");
+        return res;
+    }
+    public static ObservableList<Salle> getLesSalles(){
+        ObservableList<Salle> res = FXCollections.observableArrayList();
+        Salle s1 = new Salle("Ursulines", 150);
+        res.add(s1);
+        return res;
     }
 }

@@ -27,7 +27,8 @@ public class CtrlCrEvent {
     @FXML void initialize(){
         BooleanBinding pasPret = Bindings.or(Bindings.or(txtNom.textProperty().isEmpty(), selectSalle.armedProperty().asString().isEmpty()), Bindings.or(selectEvent.armedProperty().asString().isEmpty(), date.armedProperty().asString().isEmpty()));
         bnOK.disableProperty().bind(Bindings.when(pasPret).then(true).otherwise(false));
-
+        selectSalle.setItems(Principale.getLesSalles());
+        selectEvent.setItems(Principale.getLesTypes());
     }
 
 }
