@@ -76,4 +76,18 @@ public class Principale extends Application{
         res.add(s1);
         return res;
     }
+    public static ObservableList<Benevole> getLesBenevoles(){
+        ObservableList<Benevole> res = FXCollections.observableArrayList();
+        Benevole b1 = new Benevole("Johan", "Le Goff");
+        res.add(b1);
+        return res;
+    }
+    public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
+        Gala g = new Gala(nom, date, saison, laSalle, orga, theme, prof);
+        Donnees.ajouterEvent(g);
+    }
+    public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga){
+        SoireeDansante sd = new SoireeDansante(nom, date, saison, laSalle, orga);
+        Donnees.ajouterEvent(sd);
+    }
 }

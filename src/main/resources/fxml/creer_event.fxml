@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrEvent">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="404.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrEvent">
    <children>
       <HBox alignment="CENTER">
          <children>
@@ -43,6 +43,12 @@
          <children>
             <Label minWidth="175.0" text="Date * :" />
             <DatePicker fx:id="date" />
+         </children>
+      </HBox>
+      <HBox alignment="CENTER_LEFT">
+         <children>
+            <Label minWidth="175.0" text="Organisateur * :" />
+            <ComboBox fx:id="selectBen" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox spacing="20.0">
