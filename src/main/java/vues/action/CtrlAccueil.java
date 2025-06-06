@@ -1,5 +1,6 @@
 package vues.action;
 
+
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -23,16 +24,16 @@ public class CtrlAccueil {
 
     /* Relation avec le controleur */
     @FXML void clicFermer(ActionEvent event) {
-        Principale.fermerAppli();
+        Principale.fermerFenAccueil();
     }
     @FXML void clicCree(ActionEvent event){
         Principale.ouvrirFenCrEvent();
     }
     @FXML void clicModifier(ActionEvent event){
-        Principale.ouvrirModEvent();
+        Principale.ouvrirFenModEvent();
     }
     @FXML void doubleClic(ActionEvent event){
-        Principale.ouvrirModEvent();
+        Principale.ouvrirFenModEvent();
     }
 
     @FXML void clicTache(ActionEvent event){
@@ -50,10 +51,11 @@ public class CtrlAccueil {
                 ButtonType.NO);
         alert.setTitle("Confirmation de suppression");
         alert.showAndWait();
+
     }
-    @FXML void initialize() {
-        BooleanBinding rien =
-                Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
+    /*@FXML void initialize() {
+        //BooleanBinding rien =
+        //Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
 
         TableColumn<Evenement,String> colonne1 = new TableColumn<Evenement,String>("Nom");
         colonne1.setCellValueFactory(new PropertyValueFactory<Evenement,String>("nom"));
@@ -61,7 +63,7 @@ public class CtrlAccueil {
         TableColumn<Evenement, String> colonne2 = new TableColumn<Evenement,String>("Salle");
         colonne2.setCellValueFactory(new PropertyValueFactory<Evenement, String>("salle"));
         tvListeEvenement.getColumns().set(1, colonne2);
-        TableColumn<Evenement, String> colonne3 = new TableColumn<Evenement,String>("Type");
+        TableColumn<Evenement, String> colonne3 = new TableColumn<>("Type");
         colonne3.setCellValueFactory(new PropertyValueFactory<Evenement, String>("type"));
         tvListeEvenement.getColumns().set(2, colonne3);
         TableColumn<Evenement, Date> colonne4 = new TableColumn<Evenement ,Date>("Date");
@@ -71,15 +73,15 @@ public class CtrlAccueil {
         colonne5.setCellValueFactory(new PropertyValueFactory<Evenement, String>("saison"));
         tvListeEvenement.getColumns().set(4, colonne5);
 
-        tvListeEvenement.setItems(Principale.getLesEvenements());
-        tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        //tvListeEvenement.setItems(Principale.getLesEvenements());
+        //tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
 
-        bnSupprimer.disableProperty().bind(rien);
-        bnModifier.disableProperty().bind(rien);
+        //bnSupprimer.disableProperty().bind(rien);
+        //bnModifier.disableProperty().bind(rien);
 
 
-    }
+    }*/
 
 
 }
