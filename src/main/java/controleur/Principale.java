@@ -85,9 +85,12 @@ public class Principale extends Application{
     public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
         Gala g = new Gala(nom, date, saison, laSalle, orga, theme, prof);
         Donnees.ajouterEvent(g);
+        fermerFenCrEvent();
     }
     public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga){
         SoireeDansante sd = new SoireeDansante(nom, date, saison, laSalle, orga);
         Donnees.ajouterEvent(sd);
+        fermerFenCrEvent();
+
     }
 }
