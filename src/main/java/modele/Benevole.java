@@ -13,20 +13,37 @@ public class Benevole {
         this.prenom = prenom;
     }
 
-    public boolean equals(Benevole ben){
-        return ben.getNom() == nom && ben.getPrenom() == prenom;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
-    private String getNom(){
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setMesEvents(HashMap<String, Evenement> mesEvents) {
+        this.mesEvents = mesEvents;
+    }
+
+    public String getNom(){
         return nom;
     }
-    private String getPrenom(){
+    public String getPrenom(){
         return prenom;
     }
 
-    void ajouterEventTache(Evenement e, String tache){
+    public HashMap<String, Evenement> getMesEvents() {
+        return mesEvents;
+    }
+
+    public boolean equals(Benevole ben){
+        return ben.getNom() == nom && ben.getPrenom() == prenom;
+    }
+
+    public void ajouterEventTache(Evenement e, String tache){
         mesEvents.put(tache, e );
     }
-    void retirerEvent(Evenement e){
+    public void retirerEvent(Evenement e){
         Iterator it = mesEvents.entrySet().iterator();
         while(it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();

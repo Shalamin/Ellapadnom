@@ -1,0 +1,119 @@
+package controleur;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import modele.*;
+import java.util.*;
+
+public class Donnees {
+    static private ObservableList<Benevole> lesBenevoles = FXCollections.observableArrayList();
+    static private ObservableList<Evenement> lesEvenements 	= FXCollections.observableArrayList();
+    static private ObservableList<Salle> lesSalles 	= FXCollections.observableArrayList();
+
+    static public void chargementDonnees() {
+        lesBenevoles.add(new Benevole("Mace","Sacha"));
+        lesBenevoles.add(new Benevole("Lebeul","Ethan"));
+        lesBenevoles.add(new Benevole("Monnier","Gabriel"));
+
+        lesSalles.add(new Salle("Les Ursulines", 300));
+        lesSalles.add(new Salle("Carré Magique", 200));
+
+        lesEvenements.add(new Gala("TchatchaDanse", new Date(2014, Calendar.FEBRUARY, 11), "2014", getLaSalle("Les Ursulines") , getLeBenevole("Mace"), "Tchatcha", "Noah"));
+
+        lesBenevoles.get(1).ajouterEventTache(lesEvenements.get(1), "Organisateur");
+    }
+
+    public static Salle getLaSalle(String nomSalle) {
+        Salle res = null;
+        for (Salle salle : lesSalles) {
+            if(salle.getNomSalle().equals(nomSalle)) {
+                res = salle;
+            }
+        }
+
+        return res;
+    }
+
+    public static Benevole getLeBenevole(String nomBenevole) {
+        Benevole res = null;
+        for (Benevole benevole : lesBenevoles) {
+            if (benevole.getNom().equals(nomBenevole)) {
+                res = benevole;
+            }
+        }
+
+        return res;
+    }
+
+    static public ObservableList<Benevole> getLesBenevoles() {
+        return lesBenevoles;
+    }
+
+    static public ObservableList<Salle> getLesSalles() {
+        return lesSalles;
+    }
+
+    static public ObservableList<Evenement> getLesEvenements() {
+        return lesEvenements;
+    }
+
+    //////////////////////////
+    // méthodes (ou "requêtes") de mise à jour
+    //////////////////////////
+
+    //BENEVOLES
+
+    static public void ajouterBenevole(Benevole b) {
+        lesBenevoles.add(b);
+    }
+
+    static public void supprimerBenevole(Benevole b) {
+        boolean trouve = false;
+        int i=0;
+        while (!trouve && i<lesBenevoles.size()) {
+            if ( lesBenevoles.get(i).equals(b)){
+                lesBenevoles.remove(i);
+                trouve = true;
+            }
+            i++;
+        }
+    }
+
+
+    //SALLES
+
+    static public void ajouterSalle(Salle s) {
+        lesSalles.add(s);
+    }
+
+    static public void supprimerSalle(Salle s) {
+        boolean trouve = false;
+        int i=0;
+        while (!trouve && i<lesSalles.size()) {
+            if ( lesSalles.get(i).equals(s)){
+                lesSalles.remove(i);
+                trouve = true;
+            }
+            i++;
+        }
+    }
+
+
+    //EVENEMENTS
+
+    static public void ajouterEvenement(Evenement e) {
+        lesEvenements.add(e);
+    }
+
+    static public void supprimerEvenement(Evenement e) {
+        boolean trouve = false;
+        int i=0;
+        while (!trouve && i<lesEvenements.size()) {
+            if ( lesEvenements.get(i).equals(e)){
+                lesEvenements.remove(i);
+                trouve = true;
+            }
+            i++;
+        }
+    }
+}

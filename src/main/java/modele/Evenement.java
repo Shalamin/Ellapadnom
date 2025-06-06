@@ -50,6 +50,12 @@ public abstract class Evenement {
     public void setLaSalle(Salle laSalle) {
         this.laSalle = laSalle;
     }
+
+    public boolean equals(Evenement e){
+        return e.getNom() == nom && e.getSaison() == saison;
+    }
+
+
     /// BENEVOLES \\\
     // Privates \\
     private void ajouterTache(String tache, Benevole ben){
