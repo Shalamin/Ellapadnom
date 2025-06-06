@@ -42,4 +42,13 @@ public class Salle {
         mesEvents.remove(e);
     }
 
+    @Override
+    public String toString() {
+        return nomSalle;
+    }
+
+    public String getNomSalle() {
+        return nomSalle;
+    }
+
 }
