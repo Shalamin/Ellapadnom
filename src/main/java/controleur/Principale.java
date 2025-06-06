@@ -3,7 +3,8 @@ package controleur;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.stage.Stage;
-import vues.*;
+import vues.action.*;
+import vues.fenetres.*;
 
 public class Principale extends Application{
     static public FenAccueil fenAccueil;
@@ -31,6 +32,11 @@ public class Principale extends Application{
     ////////////////////////////////////////////
     // Gestion des fenêtres (à compléter)
     ////////////////////////////////////////////
+    public static void ouvrirFenModEvent(){fenModEvent.show();}
+    public static void ouvrirFenModTaches(){fenModTaches.show();}
+    public static void ouvrirFenCrEvent(){fenCrEvent.show();}
+    public static void ouvrirFenCrTaches(){fenCrTaches.show();}
+    public static void ouvrirFenTaches(){fenTaches.show();}
 
     public static void fermerFenAccueil() {System.exit(0);}
     public static void fermerFenTaches() {fenTaches.close();}

@@ -3,6 +3,7 @@ package vues.fenetres;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -13,6 +14,7 @@ public class FenModTaches extends Stage {
         this.setResizable(false);
         Scene laScene = new Scene(creerSceneGraph());
         this.setScene(laScene);
+        this.initModality(Modality.APPLICATION_MODAL);
     }
     private Pane creerSceneGraph() {
 
