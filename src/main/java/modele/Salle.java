@@ -47,8 +47,5 @@ public class Salle {
         return nomSalle;
     }
 
-    public String getNomSalle() {
-        return nomSalle;
-    }
 
 }
