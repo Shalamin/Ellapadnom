@@ -1,10 +1,16 @@
 package controleur;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Date;
+
 import javafx.application.Application;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import vues.action.*;
 import vues.fenetres.*;
+import modele.*;
 
 public class Principale extends Application{
     static public FenAccueil fenAccueil;
@@ -13,6 +19,8 @@ public class Principale extends Application{
     static public FenCrTaches fenCrTaches;
     static public FenModEvent fenModEvent;
     static public FenModTaches fenModTaches;
+
+    private static ObservableList<Evenement> lesEvenements = FXCollections.observableArrayList();
 
     public void start(Stage f) throws IOException {
         fenAccueil = new FenAccueil();
@@ -26,12 +34,18 @@ public class Principale extends Application{
     }
 
     public static void main(String args[]) {
+
+        Salle salle = new Salle("ursulines", 150);
+        Benevole first = new Benevole("Lui", "LeMeilleur");
+        Gala g1 = new Gala("event1", new Date(1, 1, 1), "2025", salle, first, "sexy" , "Roberto");
+        lesEvenements.add(g1);
         Application.launch();
     }
 
     ////////////////////////////////////////////
     // Gestion des fenêtres (à compléter)
     ////////////////////////////////////////////
+
     public static void ouvrirFenModEvent(){fenModEvent.show();}
     public static void ouvrirFenModTaches(){fenModTaches.show();}
     public static void ouvrirFenCrEvent(){fenCrEvent.show();}
@@ -46,6 +60,7 @@ public class Principale extends Application{
     public static void fermerFenModTaches() {fenModTaches.close();}
 
 
-    // enregistrement d'une réservation (se contente de l'afficher dans la console)
-
+    public static ObservableList<Evenement> getLesEvenements(){
+        return lesEvenements;
+    }
 }

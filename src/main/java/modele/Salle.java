@@ -12,6 +12,12 @@ public class Salle {
         this.nomSalle = nomSalle;
         this.capacite = capacite;
     }
+    public String getNom(){
+        return nomSalle;
+    }
+    public String toString(){
+        return nomSalle;
+    }
 
     /*package*/ void ajouterEvent(Evenement e){
         mesEvents.add(e);

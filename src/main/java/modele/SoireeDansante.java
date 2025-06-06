@@ -9,6 +9,7 @@ public class SoireeDansante extends Evenement{
 
     public SoireeDansante(String nom, Date date, String saison, Salle laSalle, Benevole organisateur){
         super(nom, date, saison, laSalle, organisateur);
+        super.type = "Soirée dansante";
     }
     void ajouterPlanTable(String nom){
         planTable.add(nom);

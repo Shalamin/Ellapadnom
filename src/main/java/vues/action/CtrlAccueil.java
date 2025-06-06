@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import modele.Evenement;
+import modele.Salle;
 
 import java.util.Date;
 
@@ -53,35 +54,34 @@ public class CtrlAccueil {
         alert.showAndWait();
 
     }
-    /*@FXML void initialize() {
-        //BooleanBinding rien =
-        //Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
+    @FXML void initialize() {
 
-        TableColumn<Evenement,String> colonne1 = new TableColumn<Evenement,String>("Nom");
-        colonne1.setCellValueFactory(new PropertyValueFactory<Evenement,String>("nom"));
+        TableColumn<Evenement,String> colonne1 = new TableColumn<>("Nom");
+        colonne1.setCellValueFactory(new PropertyValueFactory<>("nom"));
         tvListeEvenement.getColumns().set(0, colonne1);
-        TableColumn<Evenement, String> colonne2 = new TableColumn<Evenement,String>("Salle");
-        colonne2.setCellValueFactory(new PropertyValueFactory<Evenement, String>("salle"));
+        TableColumn<Evenement, Salle> colonne2 = new TableColumn<>("Salle");
+        colonne2.setCellValueFactory(new PropertyValueFactory<>("laSalle"));
         tvListeEvenement.getColumns().set(1, colonne2);
         TableColumn<Evenement, String> colonne3 = new TableColumn<>("Type");
-        colonne3.setCellValueFactory(new PropertyValueFactory<Evenement, String>("type"));
+        colonne3.setCellValueFactory(new PropertyValueFactory<>("type"));
         tvListeEvenement.getColumns().set(2, colonne3);
-        TableColumn<Evenement, Date> colonne4 = new TableColumn<Evenement ,Date>("Date");
-        colonne4.setCellValueFactory(new PropertyValueFactory<Evenement, Date>("date"));
+        TableColumn<Evenement, Date> colonne4 = new TableColumn<>("Date");
+        colonne4.setCellValueFactory(new PropertyValueFactory<>("date"));
         tvListeEvenement.getColumns().set(3, colonne4);
-        TableColumn<Evenement,String> colonne5 = new TableColumn<Evenement,String>("Saison");
-        colonne5.setCellValueFactory(new PropertyValueFactory<Evenement, String>("saison"));
+        TableColumn<Evenement,String> colonne5 = new TableColumn<>("Saison");
+        colonne5.setCellValueFactory(new PropertyValueFactory<>("saison"));
         tvListeEvenement.getColumns().set(4, colonne5);
+        tvListeEvenement.setItems(Principale.getLesEvenements());
+        System.out.println(Principale.getLesEvenements());
+        tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        BooleanBinding rien =
+                Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
 
-        //tvListeEvenement.setItems(Principale.getLesEvenements());
-        //tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+        bnSupprimer.disableProperty().bind(rien);
+        bnModifier.disableProperty().bind(rien);
 
 
-        //bnSupprimer.disableProperty().bind(rien);
-        //bnModifier.disableProperty().bind(rien);
-
-
-    }*/
+    }
 
 
 }
