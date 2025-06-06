@@ -46,6 +46,7 @@ public class CtrlCrEvent {
     }
     @FXML void annuler(ActionEvent event){
         Principale.fermerFenCrEvent();
+
     }
 
 

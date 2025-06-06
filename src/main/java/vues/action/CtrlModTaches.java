@@ -12,9 +12,10 @@ public class CtrlModTaches {
     @FXML private Button bnOk;
 
     @FXML void valider(ActionEvent event) {
-
+        Principale.ouvrirFenTaches();
     }
     @FXML void annuler(ActionEvent event){
+        Principale.ouvrirFenTaches();
         Principale.fermerFenModTaches();
     }
 

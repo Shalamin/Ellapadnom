@@ -15,25 +15,30 @@ public class CtrlTaches {
 
     /* Relation avec le controleur */
     @FXML void clicCree(ActionEvent event){
-        Principale.ouvrirFenCrEvent();
+        Principale.ouvrirFenCrTaches();
+        Principale.fermerFenTaches();
     }
     @FXML void clicModifier(ActionEvent event){
         Principale.ouvrirFenModTaches();
+        Principale.fermerFenTaches();
     }
     @FXML void doubleClic(ActionEvent event){
         Principale.ouvrirFenModTaches();
+        Principale.fermerFenTaches();
     }
     @FXML void clicClose(ActionEvent event) {
         Principale.fermerFenTaches();
     }
 
     @FXML void clicSupp(ActionEvent event){
+
         Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,
-            "Voulez-vous vraiment supprimer cet événement ?",
+            "Voulez-vous vraiment supprimer cette tâches?",
             ButtonType.YES,
             ButtonType.NO);
         alert.setTitle("Confirmation de suppression");
         alert.showAndWait();}
+
 
 
 
