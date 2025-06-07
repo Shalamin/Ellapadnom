@@ -19,6 +19,22 @@ public class Salle {
         return nomSalle + " - "+capacite;
     }
 
+    public String getNomSalle() {
+        return nomSalle;
+    }
+
+    public void setNomSalle(String nomSalle) {
+        this.nomSalle = nomSalle;
+    }
+
+    public int getCapacite() {
+        return capacite;
+    }
+
+    public void setCapacite(int capacite) {
+        this.capacite = capacite;
+    }
+
     /*package*/ void ajouterEvent(Evenement e){
         mesEvents.add(e);
     }

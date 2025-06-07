@@ -12,20 +12,31 @@ public class Benevole {
         this.nom = nom;
         this.prenom = prenom;
     }
-    public String toString(){
-        return nom + " " + prenom;
-    }
+
     public boolean equals(Benevole ben){
         return ben.getNom() == nom && ben.getPrenom() == prenom;
     }
-    private String getNom(){
+
+    public void setMesEvents(HashMap<String, Evenement> mesEvents) {
+        this.mesEvents = mesEvents;
+    }
+
+    public String getNom(){
         return nom;
     }
-    private String getPrenom(){
+    public String getPrenom(){
         return prenom;
     }
 
-    void ajouterEventTache(Evenement e, String tache){
+    public HashMap<String, Evenement> getMesEvents() {
+        return mesEvents;
+    }
+
+    public boolean equals(Benevole ben){
+        return ben.getNom() == nom && ben.getPrenom() == prenom;
+    }
+
+    public void ajouterEventTache(Evenement e, String tache){
         mesEvents.put(tache, e );
     }
     void retirerEvent(Evenement e){

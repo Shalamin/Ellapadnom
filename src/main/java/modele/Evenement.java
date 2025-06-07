@@ -10,7 +10,6 @@ public abstract class Evenement {
     protected Date date;
     protected String saison;
     protected Salle laSalle;
-    protected String type;
     protected HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
     public Evenement(String nom, Date date, String saison, Salle laSalle, Benevole organisateur){
         this.nom = nom;
@@ -48,9 +47,14 @@ public abstract class Evenement {
         return laSalle;
     }
 
-    public String getType(){
-        return type;
+    public void setLaSalle(Salle laSalle) {
+        this.laSalle = laSalle;
     }
+
+    public boolean equals(Evenement e){
+        return e.getNom() == nom && e.getSaison() == saison;
+    }
+
 
     /// BENEVOLES \\\
     // Privates \\

@@ -1,10 +1,6 @@
 package controleur;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Date;
-
-import com.sun.jdi.StringReference;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -61,6 +57,44 @@ public class Principale extends Application{
     public static void fermerFenModTaches() {fenModTaches.close();}
 
 
+    //Ajout et suppression données
+    static public void ajouterBenevole(Benevole b) {
+        Donnees.ajouterBenevole(b);
+    }
+
+    static public void supprimerBenevole(Benevole b) {
+        Donnees.supprimerBenevole(b);
+    }
+
+    static public void ajouterSalle(Salle s) {
+        Donnees.ajouterSalle(s);
+    }
+
+    static public void supprimerSalle(Salle s) {
+        Donnees.supprimerSalle(s);
+    }
+
+    static public void ajouterEvenement(Evenement e) {
+        Donnees.ajouterEvenement(e);
+    }
+
+    static public void SupprimerEvenement(Evenement e) {
+        Donnees.supprimerEvenement(e);
+    }
+
+    //GETTER données
+
+    static public ObservableList<Benevole> getLesBenevoles(){
+        return Donnees.getLesBenevoles();
+    }
+
+    static public ObservableList<Salle> getLesSalles(){
+        return Donnees.getLesSalles();
+    }
+
+    static public ObservableList<Evenement> getLesEvenements(){
+        return Donnees.getLesEvenements();
+    }
     public static ObservableList<Evenement> getLesEvenements(){
         return lesEvenements;
     }
