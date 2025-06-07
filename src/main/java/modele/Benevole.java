@@ -13,9 +13,7 @@ public class Benevole {
         this.prenom = prenom;
     }
 
-    public boolean equals(Benevole ben){
-        return ben.getNom() == nom && ben.getPrenom() == prenom;
-    }
+
 
     public void setMesEvents(HashMap<String, Evenement> mesEvents) {
         this.mesEvents = mesEvents;

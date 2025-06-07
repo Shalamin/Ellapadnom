@@ -9,6 +9,7 @@ public abstract class Evenement {
     protected String nom;
     protected Date date;
     protected String saison;
+    protected String type;
     protected Salle laSalle;
     protected HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
     public Evenement(String nom, Date date, String saison, Salle laSalle, Benevole organisateur){

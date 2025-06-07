@@ -1,6 +1,8 @@
 package controleur;
 
 import java.io.IOException;
+import java.util.Date;
+
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -35,7 +37,7 @@ public class Principale extends Application{
         Salle salle = new Salle("ursulines", 150);
         Benevole first = new Benevole("Lui", "LeMeilleur");
         Gala g1 = new Gala("event1", new Date(1, 1, 1), "2025", salle, first, "sexy" , "Roberto");
-        lesEvenements.add(g1);
+        Donnees.ajouterEvenement(g1);
         Application.launch();
     }
 
@@ -95,35 +97,22 @@ public class Principale extends Application{
     static public ObservableList<Evenement> getLesEvenements(){
         return Donnees.getLesEvenements();
     }
-    public static ObservableList<Evenement> getLesEvenements(){
-        return lesEvenements;
-    }
     public static ObservableList<String> getLesTypes(){
         ObservableList<String> res = FXCollections.observableArrayList();
         res.add("Gala");
         res.add("Soirée dansante");
         return res;
     }
-    public static ObservableList<Salle> getLesSalles(){
-        ObservableList<Salle> res = FXCollections.observableArrayList();
-        Salle s1 = new Salle("Ursulines", 150);
-        res.add(s1);
-        return res;
-    }
-    public static ObservableList<Benevole> getLesBenevoles(){
-        ObservableList<Benevole> res = FXCollections.observableArrayList();
-        Benevole b1 = new Benevole("Johan", "Le Goff");
-        res.add(b1);
-        return res;
-    }
+
+
     public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
         Gala g = new Gala(nom, date, saison, laSalle, orga, theme, prof);
-        Donnees.ajouterEvent(g);
+        Donnees.ajouterEvenement(g);
         fermerFenCrEvent();
     }
     public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga){
         SoireeDansante sd = new SoireeDansante(nom, date, saison, laSalle, orga);
-        Donnees.ajouterEvent(sd);
+        Donnees.ajouterEvenement(sd);
         fermerFenCrEvent();
 
     }
