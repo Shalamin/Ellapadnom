@@ -34,9 +34,11 @@ public class Principale extends Application{
 
     public static void main(String args[]) {
 
-        Salle salle = new Salle("ursulines", 150);
+        Salle salle = new Salle("Ursulines", 150);
+        Donnees.ajouterSalle(salle);
         Benevole first = new Benevole("Lui", "LeMeilleur");
-        Gala g1 = new Gala("event1", new Date(1, 1, 1), "2025", salle, first, "sexy" , "Roberto");
+        Donnees.ajouterBenevole(first);
+        Gala g1 = new Gala("event1", "2025-01-01", "2025", salle, first, "sexy" , "Roberto");
         Donnees.ajouterEvenement(g1);
         Application.launch();
     }
@@ -47,7 +49,10 @@ public class Principale extends Application{
 
     public static void ouvrirFenModEvent(){fenModEvent.show();}
     public static void ouvrirFenModTaches(){fenModTaches.show();}
-    public static void ouvrirFenCrEvent(){fenCrEvent.show();}
+    public static void ouvrirFenCrEvent(){
+        fenCrEvent.show();
+        fenCrEvent.effacer();
+    }
     public static void ouvrirFenCrTaches(){fenCrTaches.show();}
     public static void ouvrirFenTaches(){fenTaches.show();}
 
@@ -105,15 +110,16 @@ public class Principale extends Application{
     }
 
 
-    public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
+    public static void ajouterUnEvent(String nom, String date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
         Gala g = new Gala(nom, date, saison, laSalle, orga, theme, prof);
         Donnees.ajouterEvenement(g);
-        fermerFenCrEvent();
+        g.affecterSalle(laSalle);
+        fenCrEvent.close();
     }
-    public static void ajouterUnEvent(String nom, Date date, String saison, Salle laSalle, Benevole orga){
+    public static void ajouterUnEvent(String nom, String date, String saison, Salle laSalle, Benevole orga){
         SoireeDansante sd = new SoireeDansante(nom, date, saison, laSalle, orga);
         Donnees.ajouterEvenement(sd);
-        fermerFenCrEvent();
+        fenCrEvent.close();
 
     }
 }

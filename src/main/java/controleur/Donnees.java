@@ -18,7 +18,7 @@ public class Donnees {
         lesSalles.add(new Salle("Les Ursulines", 300));
         lesSalles.add(new Salle("Carré Magique", 200));
 
-        lesEvenements.add(new Gala("TchatchaDanse", new Date(2014, Calendar.FEBRUARY, 11), "2014", getLaSalle("Les Ursulines") , getLeBenevole("Mace"), "Tchatcha", "Noah"));
+        lesEvenements.add(new Gala("TchatchaDanse", "2014-01-02", "2014", getLaSalle("Les Ursulines") , getLeBenevole("Mace"), "Tchatcha", "Noah"));
 
         lesBenevoles.get(1).ajouterEventTache(lesEvenements.get(1), "Organisateur");
     }

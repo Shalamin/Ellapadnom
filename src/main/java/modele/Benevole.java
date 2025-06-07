@@ -12,8 +12,10 @@ public class Benevole {
         this.nom = nom;
         this.prenom = prenom;
     }
-
-
+    @Override
+    public String toString(){
+        return nom + " " + prenom;
+    }
 
     public void setMesEvents(HashMap<String, Evenement> mesEvents) {
         this.mesEvents = mesEvents;

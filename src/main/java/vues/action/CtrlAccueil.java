@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import modele.Evenement;
 import modele.Salle;
 
@@ -33,7 +34,7 @@ public class CtrlAccueil {
     @FXML void clicModifier(ActionEvent event){
         Principale.ouvrirFenModEvent();
     }
-    @FXML void doubleClic(ActionEvent event){
+    @FXML  void doubleClic(MouseEvent event){
         Principale.ouvrirFenModEvent();
     }
 
@@ -65,7 +66,7 @@ public class CtrlAccueil {
         TableColumn<Evenement, String> colonne3 = new TableColumn<>("Type");
         colonne3.setCellValueFactory(new PropertyValueFactory<>("type"));
         tvListeEvenement.getColumns().set(2, colonne3);
-        TableColumn<Evenement, Date> colonne4 = new TableColumn<>("Date");
+        TableColumn<Evenement, String> colonne4 = new TableColumn<>("Date");
         colonne4.setCellValueFactory(new PropertyValueFactory<>("date"));
         tvListeEvenement.getColumns().set(3, colonne4);
         TableColumn<Evenement,String> colonne5 = new TableColumn<>("Saison");

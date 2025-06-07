@@ -7,19 +7,27 @@ import java.util.*;
 
 public abstract class Evenement {
     protected String nom;
-    protected Date date;
+    protected String date;
     protected String saison;
     protected String type;
     protected Salle laSalle;
     protected HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
-    public Evenement(String nom, Date date, String saison, Salle laSalle, Benevole organisateur){
+    public Evenement(String nom, String date, String saison, Salle laSalle, Benevole organisateur){
         this.nom = nom;
         this.date = date;
         this.saison = saison;
         this.laSalle = laSalle;
         lesBenevoles.put("Organisateur", organisateur);
+        organisateur.ajouterEventTache(this, "Organisateur");
+
+    }
+    public void setType(String t){
+        type = t;
     }
 
+    public String getType(){
+        return type;
+    }
     public String getNom() {
         return nom;
     }
@@ -28,11 +36,11 @@ public abstract class Evenement {
         this.nom = nom;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
@@ -87,8 +95,8 @@ public abstract class Evenement {
         if(ben == null || tache == ""){
             Alertes.afficherErreurNull();
         }
-        else if(lesBenevoles.get(tache) == ben){
-            Alertes.afficherErreurDejaLa();
+        else{
+            ajouterTache(tache, ben);
         }
     }
 
@@ -145,9 +153,7 @@ public abstract class Evenement {
         if(salle == null){
             Alertes.afficherErreurNull();
         }
-        else if(laSalle == salle){
-            Alertes.afficherErreurDejaLa();
-        }
+
         else{
             salle.ajouterEvent(this);
             ajouterSalle(salle);
