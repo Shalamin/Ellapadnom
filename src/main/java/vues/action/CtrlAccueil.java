@@ -32,10 +32,11 @@ public class CtrlAccueil {
         Principale.ouvrirFenCrEvent();
     }
     @FXML void clicModifier(ActionEvent event){
-        Principale.ouvrirFenModEvent();
+        Principale.ouvrirFenModEvent(tvListeEvenement.getSelectionModel().getSelectedItem());
     }
     @FXML  void doubleClic(MouseEvent event){
-        Principale.ouvrirFenModEvent();
+        if(event.getClickCount() == 2 && !tvListeEvenement.getSelectionModel().isEmpty())
+        Principale.ouvrirFenModEvent(tvListeEvenement.getSelectionModel().getSelectedItem());
     }
 
     @FXML void clicTache(ActionEvent event){

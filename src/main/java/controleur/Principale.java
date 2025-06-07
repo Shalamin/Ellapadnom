@@ -50,7 +50,10 @@ public class Principale extends Application{
     // Gestion des fenêtres (à compléter)
     ////////////////////////////////////////////
 
-    public static void ouvrirFenModEvent(){fenModEvent.show();}
+    public static void ouvrirFenModEvent(Evenement e){
+        fenModEvent.afficherEvenement(e);
+        fenModEvent.show();
+    }
     public static void ouvrirFenModTaches(){fenModTaches.show();}
     public static void ouvrirFenCrEvent(){
         fenCrEvent.show();

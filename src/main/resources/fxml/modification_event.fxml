@@ -24,25 +24,25 @@
       <HBox alignment="CENTER_LEFT">
          <children>
             <Label minWidth="175.0" text="Nom *:" />
-            <TextField fx:id="txtMatricule" prefWidth="150.0" />
+            <TextField fx:id="txtNom" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
          <children>
             <Label minWidth="175.0" text="Salle * :" />
-            <ComboBox prefWidth="150.0" />
+            <ComboBox fx:id="selectSalle" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="65.0">
          <children>
             <Label minWidth="175.0" text="Type d'événement * :" />
-            <ComboBox prefWidth="150.0" />
+            <ComboBox fx:id="selectEvent" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0">
          <children>
             <Label minWidth="175.0" text="Date * :" />
-            <DatePicker />
+            <DatePicker fx:id="date" />
          </children>
       </HBox>
       <HBox spacing="20.0">

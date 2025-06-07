@@ -5,10 +5,13 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import vues.action.CtrlModEvent;
+import modele.*;
 import java.io.IOException;
 
 public class FenModEvent extends Stage {
+    private CtrlModEvent ctrl;
+
     public FenModEvent() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
@@ -28,7 +31,10 @@ public class FenModEvent extends Stage {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        loader.getController();
+        ctrl = loader.getController();
         return root;
+    }
+    public void afficherEvenement(Evenement e){
+        ctrl.afficherEvenement(e);
     }
 }
