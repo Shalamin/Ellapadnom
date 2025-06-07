@@ -39,7 +39,7 @@ public class Benevole {
     public void ajouterEventTache(Evenement e, String tache){
         mesEvents.put(tache, e );
     }
-    void retirerEvent(Evenement e){
+    public void retirerEvent(Evenement e){
         Iterator it = mesEvents.entrySet().iterator();
         while(it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();

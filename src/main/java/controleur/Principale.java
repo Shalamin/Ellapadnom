@@ -2,6 +2,9 @@ package controleur;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -85,7 +88,14 @@ public class Principale extends Application{
         Donnees.ajouterEvenement(e);
     }
 
-    static public void SupprimerEvenement(Evenement e) {
+    static public void supprimerEvenement(Evenement e) {
+        e.getLaSalle().retirerEvent(e);
+        Iterator it = e.getLesBenevoles().entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+            Benevole ben = (Benevole) pair.getValue();
+            ben.retirerEvent(e);
+        }
         Donnees.supprimerEvenement(e);
     }
 

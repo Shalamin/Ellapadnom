@@ -53,6 +53,9 @@ public class CtrlAccueil {
                 ButtonType.NO);
         alert.setTitle("Confirmation de suppression");
         alert.showAndWait();
+        if(alert.getResult() == ButtonType.YES){
+            Principale.supprimerEvenement(tvListeEvenement.getSelectionModel().getSelectedItem());
+        }
 
     }
     @FXML void initialize() {

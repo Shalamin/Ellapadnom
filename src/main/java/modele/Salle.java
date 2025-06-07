@@ -38,7 +38,7 @@ public class Salle {
     /*package*/ void ajouterEvent(Evenement e){
         mesEvents.add(e);
     }
-    /*package*/ void retirerEvent(Evenement e){
+    public void retirerEvent(Evenement e){
         mesEvents.remove(e);
     }
 

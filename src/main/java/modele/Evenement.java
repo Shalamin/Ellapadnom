@@ -47,7 +47,9 @@ public abstract class Evenement {
     public String getSaison() {
         return saison;
     }
-
+    public HashMap<String, Benevole> getLesBenevoles(){
+        return lesBenevoles;
+    }
     public void setSaison(String saison) {
         this.saison = saison;
     }
