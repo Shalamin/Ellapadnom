@@ -20,7 +20,7 @@ public class Donnees {
 
         lesEvenements.add(new Gala("TchatchaDanse", "2014-01-02", "2014", getLaSalle("Les Ursulines") , getLeBenevole("Mace"), "Tchatcha", "Noah"));
 
-        lesBenevoles.get(1).ajouterEventTache(lesEvenements.get(1), "Organisateur");
+        lesBenevoles.get(0).ajouterEventTache(lesEvenements.get(0), "Organisateur");
     }
 
     public static Salle getLaSalle(String nomSalle) {
@@ -45,7 +45,7 @@ public class Donnees {
         return res;
     }
 
-    static public ObservableList<Benevole> getLesBenevoles() {
+    public static  ObservableList<Benevole> getLesBenevoles() {
         return lesBenevoles;
     }
 
@@ -53,7 +53,7 @@ public class Donnees {
         return lesSalles;
     }
 
-    static public ObservableList<Evenement> getLesEvenements() {
+    public static ObservableList<Evenement> getLesEvenements() {
         return lesEvenements;
     }
 
@@ -109,11 +109,28 @@ public class Donnees {
         boolean trouve = false;
         int i=0;
         while (!trouve && i<lesEvenements.size()) {
+            System.out.println(lesEvenements.get(i).getNom());
             if ( lesEvenements.get(i).equals(e)){
                 lesEvenements.remove(i);
                 trouve = true;
             }
             i++;
         }
+    }
+    static public void modifierEvenement(Evenement e){
+        boolean trouve = false;
+
+        int i=0;
+        while (!trouve && i<lesEvenements.size()) {
+            if ( lesEvenements.get(i).getNom().equals(e.getNom())){
+                lesEvenements.set(i, e);
+
+                trouve = true;
+            }
+            else{
+                i++;
+            }
+        }
+
     }
 }

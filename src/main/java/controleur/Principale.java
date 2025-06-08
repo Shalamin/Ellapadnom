@@ -25,6 +25,7 @@ public class Principale extends Application{
     private static ObservableList<Evenement> lesEvenements = FXCollections.observableArrayList();
 
     public void start(Stage f) throws IOException {
+        Donnees.chargementDonnees();
         fenAccueil = new FenAccueil();
         fenTaches = new FenTaches();
         fenCrEvent = new FenCrEvent();
@@ -36,13 +37,6 @@ public class Principale extends Application{
     }
 
     public static void main(String args[]) {
-
-        Salle salle = new Salle("Ursulines", 150);
-        Donnees.ajouterSalle(salle);
-        Benevole first = new Benevole("Lui", "LeMeilleur");
-        Donnees.ajouterBenevole(first);
-        Gala g1 = new Gala("event1", "2025-01-01", "2025", salle, first, "sexy" , "Roberto");
-        Donnees.ajouterEvenement(g1);
         Application.launch();
     }
 
@@ -66,7 +60,9 @@ public class Principale extends Application{
     public static void fermerFenTaches() {fenTaches.close();}
     public static void fermerFenCrEvent() {fenCrEvent.close();}
     public static void fermerFenCrTaches() {fenCrTaches.close();}
-    public static void fermerFenModEvent() {fenModEvent.close();}
+    public static void fermerFenModEvent() {
+        fenModEvent.close();
+    }
     public static void fermerFenModTaches() {fenModTaches.close();}
 
 
@@ -135,4 +131,23 @@ public class Principale extends Application{
         fenCrEvent.close();
 
     }
+    public static void modifierEvenement(Evenement e, String nom, Salle salle, String date, String saison, String type){
+        if(type.equals("Gala")){
+            Gala gala = new Gala(nom, date, saison, salle, e.getLesBenevoles().get("Organisateur"), "", "");
+            Donnees.modifierEvenement(gala);
+        }
+        else if(type.equals("Soirée dansante")){
+            SoireeDansante sd = new SoireeDansante(nom, date, saison, salle, e.getLesBenevoles().get("Organisateur"));
+            Donnees.modifierEvenement(sd);
+            System.out.println("SOIREE");
+
+        }
+
+
+
+        fenModEvent.close();
+
+    }
+
+
 }

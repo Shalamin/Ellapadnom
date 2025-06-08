@@ -77,7 +77,6 @@ public class CtrlAccueil {
         colonne5.setCellValueFactory(new PropertyValueFactory<>("saison"));
         tvListeEvenement.getColumns().set(4, colonne5);
         tvListeEvenement.setItems(Principale.getLesEvenements());
-        System.out.println(Principale.getLesEvenements());
         tvListeEvenement.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         BooleanBinding rien =
                 Bindings.equal(tvListeEvenement.getSelectionModel().selectedIndexProperty(), -1);
