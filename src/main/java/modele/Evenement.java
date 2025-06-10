@@ -98,8 +98,7 @@ public abstract class Evenement {
     public void affecterTache(String tache, Benevole ben){
         if(ben == null || tache == ""){
             Alertes.afficherErreurNull();
-        }
-        else{
+        } else{
             ajouterTache(tache, ben);
         }
     }

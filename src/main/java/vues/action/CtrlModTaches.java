@@ -31,6 +31,8 @@ public class CtrlModTaches {
 
         if (ancienneTache == "Organisateur") {
             Alertes.afficherErreurSupprOrganisateur();
+        } else if(evenement.getLesBenevoles().containsKey(nouvelleTache) && evenement.getLesBenevoles().containsValue(nouveauBenevole)){
+            Alertes.afficherErreurTacheDejaLa();
         } else {
             Principale.modifierTache(ancienneTache, ancienBenevole, nouvelleTache, nouveauBenevole, evenement);
             Principale.ouvrirFenTaches(evenement);

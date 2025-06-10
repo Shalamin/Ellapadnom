@@ -30,7 +30,7 @@ public class CtrlModEvent {
         String laDate = date.getValue().toString();
         String saison = Integer.toString(date.getValue().getYear());
         Principale.modifierEvenement(evenement, nom, laSalle, laDate, saison,  type);
-
+        Principale.ouvrirFenTaches(evenement);
 
 
 

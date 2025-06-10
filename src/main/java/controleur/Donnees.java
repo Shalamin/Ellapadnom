@@ -3,6 +3,7 @@ package controleur;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableMap;
+import javafx.scene.control.Alert;
 import modele.*;
 import java.util.*;
 
@@ -108,7 +109,14 @@ public class Donnees {
     //EVENEMENTS
 
     static public void ajouterEvenement(Evenement e) {
-        lesEvenements.add(e);
+        boolean ajout = true;
+        for (Evenement event : lesEvenements) {
+            if (event.getNom().equals(e.getNom()) && event.getLaSalle().equals(e.getLaSalle()) && event.getType().equals(e.getType()) && event.getDate().equals(e.getDate()) && event.getSaison().equals(e.getSaison())) {
+                Alertes.afficherErreurEventDejaLa();
+                ajout = false;
+            }
+        }
+        if (ajout) {lesEvenements.add(e);}
     }
 
     static public void supprimerEvenement(Evenement e) {
@@ -144,9 +152,8 @@ public class Donnees {
     //TACHES
     static public void ajouterTache(String t, Benevole b, Evenement e) {
         for (Evenement event : lesEvenements ) {
-            if (event.getNom().equals(e.getNom()) && event.getSaison().equals(e.getSaison())) {
+            if (event.getNom().equals(e.getNom()) && event.getLaSalle().equals(e.getLaSalle()) && event.getType().equals(e.getType()) && event.getDate().equals(e.getDate()) && event.getSaison().equals(e.getSaison())) {
                 event.affecterTache(t, b);
-                System.out.println("Tache ajout<UNK> avec le tache");
             }
         }
     }

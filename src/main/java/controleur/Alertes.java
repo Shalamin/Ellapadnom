@@ -29,6 +29,18 @@ public class Alertes {
         alerte.show();
     }
 
+    public static void afficherErreurTacheDejaLa() {
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas attribuer la même tâche à la même personne", ButtonType.CLOSE);
+        alerte.setTitle("Erreur tache ");
+        alerte.show();
+    }
+
+    public static void afficherErreurEventDejaLa() {
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas créer cette tâche, elle existe déjà", ButtonType.CLOSE);
+        alerte.setTitle("Erreur événement ");
+        alerte.show();
+    }
+
 
 }
 

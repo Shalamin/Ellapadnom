@@ -1,5 +1,6 @@
 package vues.action;
 
+import controleur.Alertes;
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -24,8 +25,12 @@ public class CtrlCrTaches {
     @FXML void valider(ActionEvent event) {
         String nom = txtMatricule.getText();
         Benevole benevole = (Benevole) selectBenevole.getValue();
-        Principale.ajouterTache(nom, benevole, evenement);
-        Principale.ouvrirFenTaches(evenement);
+        if (evenement.getLesBenevoles().containsKey(nom) && evenement.getLesBenevoles().containsValue(benevole)) {
+            Alertes.afficherErreurTacheDejaLa();
+        } else {
+            Principale.ajouterTache(nom, benevole, evenement);
+            Principale.ouvrirFenTaches(evenement);
+        }
     }
     @FXML void annuler(ActionEvent event){
         Principale.fermerFenCrTaches();
