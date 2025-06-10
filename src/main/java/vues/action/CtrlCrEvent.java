@@ -33,14 +33,11 @@ public class CtrlCrEvent {
         Salle salle = (Salle) selectSalle.getValue();
         Benevole orga = (Benevole) selectBen.getValue();
         if(selectEvent.getSelectionModel().getSelectedItem() == "Gala"){
-            String theme = "";
-            String prof = "";
-
-            Principale.ajouterUnEvent(nom, dateFormat, saison, salle, orga, theme, prof);
+            Principale.ouvrirFenCrGala(nom, dateFormat, saison, salle, orga);
         }
         else if(selectEvent.getSelectionModel().getSelectedItem() == "Soirée dansante"){
-
-            Principale.ajouterUnEvent(nom, dateFormat, saison, salle, orga);
+            SoireeDansante sd = new SoireeDansante(nom, dateFormat, saison, salle, orga);
+            Principale.ajouterUnEvent(sd);
         }
 
     }

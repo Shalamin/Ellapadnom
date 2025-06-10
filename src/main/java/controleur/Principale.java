@@ -21,6 +21,7 @@ public class Principale extends Application{
     static public FenCrTaches fenCrTaches;
     static public FenModEvent fenModEvent;
     static public FenModTaches fenModTaches;
+    static public FenCrGala fenCrGala;
 
     private static ObservableList<Evenement> lesEvenements = FXCollections.observableArrayList();
 
@@ -29,6 +30,7 @@ public class Principale extends Application{
         fenAccueil = new FenAccueil();
         fenTaches = new FenTaches();
         fenCrEvent = new FenCrEvent();
+        fenCrGala = new FenCrGala();
         fenCrTaches = new FenCrTaches();
         fenModEvent = new FenModEvent();
         fenModTaches = new FenModTaches();
@@ -53,12 +55,19 @@ public class Principale extends Application{
         fenCrEvent.show();
         fenCrEvent.effacer();
     }
+    public static void ouvrirFenCrGala(String nom, String date, String saison, Salle salle, Benevole orga){
+        fenCrEvent.close();
+        fenCrGala.show();
+        fenCrGala.donnees(nom, date, saison ,salle, orga);
+        fenCrGala.effacer();
+    }
     public static void ouvrirFenCrTaches(){fenCrTaches.show();}
     public static void ouvrirFenTaches(){fenTaches.show();}
 
     public static void fermerFenAccueil() {System.exit(0);}
     public static void fermerFenTaches() {fenTaches.close();}
     public static void fermerFenCrEvent() {fenCrEvent.close();}
+    public static void fermerFenCrGala(){fenCrGala.close();}
     public static void fermerFenCrTaches() {fenCrTaches.close();}
     public static void fermerFenModEvent() {
         fenModEvent.close();
@@ -119,15 +128,13 @@ public class Principale extends Application{
     }
 
 
-    public static void ajouterUnEvent(String nom, String date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
-        Gala g = new Gala(nom, date, saison, laSalle, orga, theme, prof);
-        Donnees.ajouterEvenement(g);
-        g.affecterSalle(laSalle);
-        fenCrEvent.close();
-    }
-    public static void ajouterUnEvent(String nom, String date, String saison, Salle laSalle, Benevole orga){
-        SoireeDansante sd = new SoireeDansante(nom, date, saison, laSalle, orga);
-        Donnees.ajouterEvenement(sd);
+
+    public static void ajouterUnEvent(Evenement e){
+
+        Donnees.ajouterEvenement(e);
+        if(fenCrGala.isShowing()){
+            fenCrGala.close();
+        }
         fenCrEvent.close();
 
     }

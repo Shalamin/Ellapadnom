@@ -54,7 +54,7 @@
       <HBox spacing="20.0">
          <children>
             <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#annuler" prefWidth="100.0" text="Annuler" />
-            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" text="OK" />
+            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" text="Suivant" />
          </children>
          <padding>
             <Insets left="100.0" top="20.0" />
