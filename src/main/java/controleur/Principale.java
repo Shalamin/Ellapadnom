@@ -51,7 +51,10 @@ public class Principale extends Application{
         fenModEvent.afficherEvenement(e);
         fenModEvent.show();
     }
-    public static void ouvrirFenModTaches(){fenModTaches.show();}
+    public static void ouvrirFenModTaches(Evenement e, String tache, Benevole b){
+        fenModTaches.afficherTache(e, tache, b);
+        fenModTaches.show();
+    }
     public static void ouvrirFenCrEvent(){
         fenCrEvent.show();
         fenCrEvent.effacer();
@@ -172,6 +175,11 @@ public class Principale extends Application{
         e.affecterTache(t, b);
         Donnees.ajouterTache(t, b, e);
         fenCrTaches.close();
+    }
+
+    public static void modifierTache(String ancienneTache, Benevole ancienBenevole,
+                                     String nouvelleTache, Benevole nouveauBenevole, Evenement e) {
+        Donnees.modifierTache(ancienneTache, ancienBenevole, nouvelleTache, nouveauBenevole, e);
     }
 
     public static void supprimerTache(String nomTache, Benevole benevole, Evenement evenement){

@@ -151,6 +151,18 @@ public class Donnees {
         }
     }
 
+    public static void modifierTache(String ancienneTache, Benevole ancienBenevole,
+                                     String nouvelleTache, Benevole nouveauBenevole, Evenement e) {
+        ObservableMap<String, Benevole> taches = e.getLesBenevoles();
+
+        // Vérifie que l'entrée à modifier existe bien
+        if (taches.containsKey(ancienneTache) && taches.get(ancienneTache).equals(ancienBenevole)) {
+            taches.remove(ancienneTache);
+            taches.put(nouvelleTache, nouveauBenevole);
+        }
+    }
+
+
     static public void supprimerTache(String t, Benevole b, Evenement e) {
         ObservableMap<String, Benevole> taches = e.getLesBenevoles();
         if (taches.containsKey(t) && taches.get(t).equals(b)) {

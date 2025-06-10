@@ -36,7 +36,7 @@ public class FenModTaches extends Stage {
         ctrl = loader.getController();
         return root;
     }
-    public void afficherTache(String s, Benevole b){
-        ctrl.afficherTache(s, b);
+    public void afficherTache(Evenement e, String tache, Benevole b) {
+        ctrl.afficherTache(e, tache, b);
     }
 }

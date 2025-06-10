@@ -37,12 +37,20 @@ public class CtrlTaches {
         Principale.fermerFenTaches();
     }
     @FXML void clicModifier(ActionEvent event){
-        Principale.ouvrirFenModTaches();
-        Principale.fermerFenTaches();
+        Map.Entry<String, Benevole> selection = tableTaches.getSelectionModel().getSelectedItem();
+
+        if (selection != null) {
+            Principale.ouvrirFenModTaches(evenement, selection.getKey(), selection.getValue());
+            Principale.fermerFenTaches();
+        }
     }
     @FXML void doubleClic(ActionEvent event){
-        Principale.ouvrirFenModTaches();
-        Principale.fermerFenTaches();
+        Map.Entry<String, Benevole> selection = tableTaches.getSelectionModel().getSelectedItem();
+
+        if (selection != null) {
+            Principale.ouvrirFenModTaches(evenement, selection.getKey(), selection.getValue());
+            Principale.fermerFenTaches();
+        }
     }
     @FXML void clicClose(ActionEvent event) {
         Principale.fermerFenTaches();
@@ -52,7 +60,7 @@ public class CtrlTaches {
 
         Map.Entry<String, Benevole> selection = tableTaches.getSelectionModel().getSelectedItem();
 
-        if (Objects.equals(selection.getKey(), evenement.get)){
+        if (Objects.equals(selection.getKey(), "Organisateur")){
             System.out.println("Peux pas suprimer un organisateur");
         } else {
             Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,

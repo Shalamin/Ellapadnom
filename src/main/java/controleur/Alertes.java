@@ -23,6 +23,12 @@ public class Alertes {
         alerte.show();
     }
 
+    public static void afficherErreurSupprOrganisateur() {
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas changer le rôle de l'organisateur.", ButtonType.CLOSE);
+        alerte.setTitle("Erreur tache Organisateur");
+        alerte.show();
+    }
+
 
 }
 
