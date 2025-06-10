@@ -19,8 +19,9 @@
       <Button fx:id="bnFermer" layoutX="367.0" layoutY="185.0" mnemonicParsing="false" onAction="#clicClose" prefHeight="30.0" prefWidth="90.0" text="Fermer" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
       <TableView fx:id="tableTaches" layoutX="30.0" layoutY="60.0" prefHeight="300.0" prefWidth="300.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="Tâches" />
-          <TableColumn prefWidth="75.0" text="Bénévoles" />
+            <TableColumn fx:id="colTache" text="Tâche" />
+            <TableColumn fx:id="colNom"   text="Nom"   />
+            <TableColumn fx:id="colPrenom" text="Prénom"/>
         </columns>
       </TableView>
    </children>
