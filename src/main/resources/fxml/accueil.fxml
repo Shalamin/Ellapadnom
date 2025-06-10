@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlAccueil">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" style="-fx-background-color: #901E3E;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlAccueil">
    <children>
-      <Label layoutX="248.0" layoutY="20.0" text="EllaPadNom">
+      <Label layoutX="248.0" layoutY="20.0" text="EllaPadNom" textFill="WHITE">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -24,11 +24,11 @@
             <TableColumn prefWidth="75.0" text="Saison" />
         </columns>
       </TableView>
-      <Button fx:id="bnCree" layoutX="511.0" layoutY="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicCree" text="Créer..." AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
-      <Button fx:id="bnModifier" layoutX="480.0" layoutY="84.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicModifier" text="Modifier..." AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="95.0" />
-      <Button fx:id="bnSupprimer" layoutX="490.0" layoutY="95.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicSupp" text="Supprimer" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0" />
-      <Button fx:id="bnTaches" layoutX="480.0" layoutY="290.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicTache" text="Tâches" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="20.0" />
-      <Button fx:id="bnFermer" layoutX="480.0" layoutY="345.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicFermer" text="Fermer" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="bnCree" layoutX="511.0" layoutY="40.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicCree" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Créer..." textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="50.0" />
+      <Button fx:id="bnModifier" layoutX="480.0" layoutY="84.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicModifier" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Modifier..." textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="95.0" />
+      <Button fx:id="bnSupprimer" layoutX="490.0" layoutY="95.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicSupp" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Supprimer" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="140.0" />
+      <Button fx:id="bnTaches" layoutX="480.0" layoutY="290.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicTache" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Tâches" textFill="WHITE" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="bnFermer" layoutX="480.0" layoutY="345.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicFermer" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Fermer" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
    </children>
    <padding>
       <Insets top="10.0" />
