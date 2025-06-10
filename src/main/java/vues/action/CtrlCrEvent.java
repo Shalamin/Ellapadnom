@@ -32,6 +32,8 @@ public class CtrlCrEvent {
         String saison = Integer.toString(date.getValue().getYear());
         Salle salle = (Salle) selectSalle.getValue();
         Benevole orga = (Benevole) selectBen.getValue();
+
+
         if(selectEvent.getSelectionModel().getSelectedItem() == "Gala"){
             Principale.ouvrirFenCrGala(nom, dateFormat, saison, salle, orga);
         }

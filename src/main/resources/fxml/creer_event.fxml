@@ -10,11 +10,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="404.0" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrEvent">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="404.0" spacing="20.0" style="-fx-background-color: #8F1E3E;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrEvent">
    <children>
       <HBox alignment="CENTER">
          <children>
-            <Label alignment="CENTER" minWidth="100.0" text="Création d'un événement">
+            <Label alignment="CENTER" minWidth="100.0" style="-fx-font-weight: bold;" text="Création d'un événement" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -23,38 +23,38 @@
       </HBox>
       <HBox alignment="CENTER_LEFT">
          <children>
-            <Label minWidth="175.0" text="Nom *:" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Nom *:" textFill="WHITE" />
             <TextField fx:id="txtNom" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
          <children>
-            <Label minWidth="175.0" text="Salle * :" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Salle * :" textFill="WHITE" />
             <ComboBox fx:id="selectSalle" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="65.0">
          <children>
-            <Label minWidth="175.0" text="Type d'événement * :" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Type d'événement * :" textFill="WHITE" />
             <ComboBox fx:id="selectEvent" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="110.0">
          <children>
-            <Label minWidth="175.0" text="Date * :" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Date * :" textFill="WHITE" />
             <DatePicker fx:id="date" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT">
          <children>
-            <Label minWidth="175.0" text="Organisateur * :" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Organisateur * :" textFill="WHITE" />
             <ComboBox fx:id="selectBen" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox spacing="20.0">
          <children>
-            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#annuler" prefWidth="100.0" text="Annuler" />
-            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" text="Suivant" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#annuler" prefWidth="100.0" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Annuler" textFill="WHITE" />
+            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Suivant" textFill="WHITE" />
          </children>
          <padding>
             <Insets left="100.0" top="20.0" />

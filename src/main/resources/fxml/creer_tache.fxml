@@ -9,11 +9,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrTaches">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" spacing="20.0" style="-fx-background-color: #901E3E;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="vues.action.CtrlCrTaches">
    <children>
       <HBox alignment="CENTER">
          <children>
-            <Label alignment="CENTER" minWidth="100.0" text="Création d'une tâche">
+            <Label alignment="CENTER" minWidth="100.0" style="-fx-font-weight: bold;" text="Création d'une tâche" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
@@ -22,20 +22,20 @@
       </HBox>
       <HBox alignment="CENTER_LEFT">
          <children>
-            <Label minWidth="175.0" text="Tâche *:" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Tâche *:" textFill="WHITE" />
             <TextField fx:id="txtMatricule" prefWidth="150.0" />
          </children>
       </HBox>
       <HBox alignment="CENTER_LEFT" layoutX="20.0" layoutY="20.0">
          <children>
-            <Label minWidth="175.0" text="Bénévole * :" />
+            <Label minWidth="175.0" style="-fx-font-weight: bold;" text="Bénévole * :" textFill="WHITE" />
             <ComboBox prefWidth="150.0" />
          </children>
       </HBox>
       <HBox spacing="20.0">
          <children>
-            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#annuler" prefWidth="100.0" text="Annuler" />
-            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" text="OK" />
+            <Button fx:id="bnAnnuler" mnemonicParsing="false" onAction="#annuler" prefWidth="100.0" style="-fx-font-weight: bold; -fx-background-color: #511D43;" text="Annuler" textFill="WHITE" />
+            <Button fx:id="bnOK" mnemonicParsing="false" onAction="#valider" prefWidth="100.0" style="-fx-font-weight: bold; -fx-background-color: #511D43;" text="OK" textFill="WHITE" />
          </children>
          <padding>
             <Insets left="100.0" top="20.0" />
