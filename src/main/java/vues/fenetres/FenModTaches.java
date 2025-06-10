@@ -5,10 +5,15 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.Benevole;
+import modele.Evenement;
+import vues.action.CtrlModEvent;
+import vues.action.CtrlModTaches;
 
 import java.io.IOException;
 
 public class FenModTaches extends Stage {
+    private CtrlModTaches ctrl;
     public FenModTaches() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
@@ -28,7 +33,10 @@ public class FenModTaches extends Stage {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        loader.getController();
+        ctrl = loader.getController();
         return root;
+    }
+    public void afficherTache(String s, Benevole b){
+        ctrl.afficherTache(s, b);
     }
 }

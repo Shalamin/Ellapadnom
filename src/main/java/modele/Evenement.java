@@ -2,6 +2,8 @@ package modele;
 
 import controleur.Alertes;
 import controleur.Principale;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableMap;
 
 import java.util.*;
 
@@ -11,7 +13,7 @@ public abstract class Evenement {
     protected String saison;
     protected String type;
     protected Salle laSalle;
-    protected HashMap<String, Benevole> lesBenevoles = new HashMap<String, Benevole>();
+    protected ObservableMap<String, Benevole> lesBenevoles = FXCollections.observableHashMap();
     public Evenement(String nom, String date, String saison, Salle laSalle, Benevole organisateur){
         this.nom = nom;
         this.date = date;
@@ -47,7 +49,7 @@ public abstract class Evenement {
     public String getSaison() {
         return saison;
     }
-    public HashMap<String, Benevole> getLesBenevoles(){
+    public ObservableMap<String, Benevole> getLesBenevoles(){
         return lesBenevoles;
     }
     public void setSaison(String saison) {
@@ -136,6 +138,13 @@ public abstract class Evenement {
         else{
             supprimerBenevole(ben);
             ben.retirerEvent(this);
+        }
+    }
+    public void afficherTaches(){
+        Iterator it = lesBenevoles.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry pair = (Map.Entry) it.next();
+
         }
     }
 

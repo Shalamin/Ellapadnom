@@ -35,12 +35,12 @@ public class CtrlAccueil {
         Principale.ouvrirFenModEvent(tvListeEvenement.getSelectionModel().getSelectedItem());
     }
     @FXML  void doubleClic(MouseEvent event){
-        if(event.getClickCount() == 2 && !tvListeEvenement.getSelectionModel().isEmpty())
-        Principale.ouvrirFenModEvent(tvListeEvenement.getSelectionModel().getSelectedItem());
+        if(event.getClickCount() == 2 && !tvListeEvenement.getSelectionModel().isEmpty()){
+        Principale.ouvrirFenModEvent(tvListeEvenement.getSelectionModel().getSelectedItem());}
     }
 
     @FXML void clicTache(ActionEvent event){
-        Principale.ouvrirFenTaches();
+        Principale.ouvrirFenTaches(tvListeEvenement.getSelectionModel().getSelectedItem());
     }
 
 
@@ -83,6 +83,7 @@ public class CtrlAccueil {
 
         bnSupprimer.disableProperty().bind(rien);
         bnModifier.disableProperty().bind(rien);
+        bnTaches.disableProperty().bind(rien);
 
 
     }

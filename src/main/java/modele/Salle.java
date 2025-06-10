@@ -41,11 +41,4 @@ public class Salle {
     public void retirerEvent(Evenement e){
         mesEvents.remove(e);
     }
-
-    @Override
-    public String toString() {
-        return nomSalle;
-    }
-
-
 }

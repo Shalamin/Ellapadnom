@@ -9,6 +9,7 @@ import java.util.Map;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.ObservableMap;
 import javafx.stage.Stage;
 import vues.action.*;
 import vues.fenetres.*;
@@ -53,8 +54,14 @@ public class Principale extends Application{
         fenCrEvent.show();
         fenCrEvent.effacer();
     }
-    public static void ouvrirFenCrTaches(){fenCrTaches.show();}
-    public static void ouvrirFenTaches(){fenTaches.show();}
+    public static void ouvrirFenCrTaches(Evenement e){
+        fenCrTaches.eventSelect(e);
+        fenCrTaches.effacer();
+        fenCrTaches.show();
+    }
+    public static void ouvrirFenTaches(Evenement e){
+        fenTaches.eventSelect(e);
+        fenTaches.show();}
 
     public static void fermerFenAccueil() {System.exit(0);}
     public static void fermerFenTaches() {fenTaches.close();}
@@ -117,6 +124,9 @@ public class Principale extends Application{
         res.add("Soirée dansante");
         return res;
     }
+    public static ObservableMap<String, Benevole> getLesTaches(Evenement e){
+        return Donnees.getLesTaches(e);
+    }
 
 
     public static void ajouterUnEvent(String nom, String date, String saison, Salle laSalle, Benevole orga, String theme, String prof){
@@ -149,5 +159,9 @@ public class Principale extends Application{
 
     }
 
-
+    public static void ajouterTache(String t, Benevole b, Evenement e){
+        e.affecterTache(t, b);
+        Donnees.ajouterTache(t, b, e);
+        fenCrTaches.close();
+    }
 }

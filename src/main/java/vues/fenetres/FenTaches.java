@@ -5,10 +5,14 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import modele.Evenement;
+import vues.action.CtrlCrEvent;
+import vues.action.CtrlTaches;
 
 import java.io.IOException;
 
 public class FenTaches extends Stage {
+    private CtrlTaches ctrl;
     public FenTaches() {
         this.setTitle("EllaPadNom");
         this.setResizable(false);
@@ -28,7 +32,9 @@ public class FenTaches extends Stage {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-        loader.getController();
+        ctrl = loader.getController();
         return root;
     }
+
+    public void eventSelect(Evenement e){ctrl.setEvent(e);}
 }
