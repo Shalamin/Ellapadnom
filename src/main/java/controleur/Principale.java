@@ -173,4 +173,8 @@ public class Principale extends Application{
         Donnees.ajouterTache(t, b, e);
         fenCrTaches.close();
     }
+
+    public static void supprimerTache(String nomTache, Benevole benevole, Evenement evenement){
+        Donnees.supprimerTache(nomTache, benevole, evenement);
+    }
 }

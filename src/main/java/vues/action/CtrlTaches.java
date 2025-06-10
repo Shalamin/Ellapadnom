@@ -18,6 +18,7 @@ import java.time.LocalDate;
 import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 public class CtrlTaches {
     @FXML private Button bnCree;
@@ -49,12 +50,22 @@ public class CtrlTaches {
 
     @FXML void clicSupp(ActionEvent event){
 
-        Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,
-            "Voulez-vous vraiment supprimer cette tâches?",
-            ButtonType.YES,
-            ButtonType.NO);
-        alert.setTitle("Confirmation de suppression");
-        alert.showAndWait();}
+        Map.Entry<String, Benevole> selection = tableTaches.getSelectionModel().getSelectedItem();
+
+        if (Objects.equals(selection.getKey(), evenement.get)){
+            System.out.println("Peux pas suprimer un organisateur");
+        } else {
+            Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,
+                    "Voulez-vous vraiment supprimer cette tâches?",
+                    ButtonType.YES,
+                    ButtonType.NO);
+            alert.setTitle("Confirmation de suppression");
+            alert.showAndWait();
+            if (alert.getResult() == ButtonType.YES) {
+                Principale.supprimerTache(selection.getKey(), selection.getValue(), evenement);
+            }
+        }
+    }
 
     public void initialize() {
         colTache.setCellValueFactory(data ->

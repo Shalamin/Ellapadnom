@@ -151,15 +151,10 @@ public class Donnees {
         }
     }
 
-    static public void supprimerTache(String t, Benevole b) {
-        boolean trouve = false;
-        Iterator it = lesTaches.entrySet().iterator();
-        while (!trouve && it.hasNext()) {
-            Map.Entry ent = (Map.Entry) it.next();
-            if (((Benevole) ent.getValue()).equals(b) && ent.getKey().equals(t)) {
-                lesTaches.remove(ent.getKey());
-                trouve = true;
-            }
+    static public void supprimerTache(String t, Benevole b, Evenement e) {
+        ObservableMap<String, Benevole> taches = e.getLesBenevoles();
+        if (taches.containsKey(t) && taches.get(t).equals(b)) {
+            taches.remove(t);
         }
     }
 }
