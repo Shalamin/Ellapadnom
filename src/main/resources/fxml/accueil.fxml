@@ -30,6 +30,7 @@
        <Button fx:id="bnRecherche" layoutX="490.0" layoutY="95.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicRech" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Recherche" textFill="WHITE" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="195.0" />
        <Button fx:id="bnTaches" layoutX="480.0" layoutY="290.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicTache" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Tâches" textFill="WHITE" AnchorPane.bottomAnchor="130.0" AnchorPane.rightAnchor="20.0" />
       <Button fx:id="bnFermer" layoutX="480.0" layoutY="345.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicFermer" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Fermer" textFill="WHITE" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0" />
+      <Button fx:id="bnHistorique" layoutX="480.0" layoutY="248.0" minWidth="100.0" mnemonicParsing="false" onAction="#clicHisto" style="-fx-background-color: #511D43; -fx-font-weight: bold;" text="Historique" textFill="WHITE" />
    </children>
    <padding>
       <Insets top="10.0" />

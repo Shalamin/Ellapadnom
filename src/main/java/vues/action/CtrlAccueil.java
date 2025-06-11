@@ -13,6 +13,7 @@ import javafx.scene.input.MouseEvent;
 import modele.Evenement;
 import modele.Salle;
 
+import javax.swing.*;
 import java.util.Date;
 
 
@@ -23,6 +24,7 @@ public class CtrlAccueil {
     @FXML private Button bnSupprimer;
     @FXML private Button bnTaches;
     @FXML private Button bnFermer;
+    @FXML private Button bnHistorique;
     @FXML public TableView<Evenement> tvListeEvenement;
 
     /* Relation avec le controleur */
@@ -45,7 +47,9 @@ public class CtrlAccueil {
         Principale.ouvrirFenTaches(tvListeEvenement.getSelectionModel().getSelectedItem());
     }
 
-
+    @FXML void clicHisto(ActionEvent event){
+        Principale.ouvrirFenHistorique();
+    }
     @FXML void clicSupp(ActionEvent event){
 
         tvListeEvenement.getSelectionModel().selectedIndexProperty();

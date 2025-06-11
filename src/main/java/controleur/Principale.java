@@ -24,6 +24,7 @@ public class Principale extends Application{
     static public FenModTaches fenModTaches;
     static public FenCrGala fenCrGala;
     static public FenRecherche fenRecherche;
+    static public FenHistorique fenHistorique;
 
     private static ObservableList<Evenement> lesEvenements = FXCollections.observableArrayList();
 
@@ -37,6 +38,7 @@ public class Principale extends Application{
         fenModEvent = new FenModEvent();
         fenModTaches = new FenModTaches();
         fenRecherche = new FenRecherche();
+        fenHistorique = new FenHistorique();
         fenAccueil.show();
 
     }
@@ -74,6 +76,12 @@ public class Principale extends Application{
         fenCrGala.show();
         fenCrGala.donnees(nom, date, saison ,salle, orga);
         fenCrGala.effacer();
+    }
+    public static void ouvrirFenHistorique(){
+        fenHistorique.show();
+    }
+    public static void fermerFenHistorique(){
+        fenHistorique.close();
     }
     public static void ouvrirFenCrTaches(){fenCrTaches.show();}
     public static void ouvrirFenTaches(){fenTaches.show();}
