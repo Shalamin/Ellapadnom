@@ -23,6 +23,7 @@ public class Principale extends Application{
     static public FenModEvent fenModEvent;
     static public FenModTaches fenModTaches;
     static public FenCrGala fenCrGala;
+    static public FenRecherche fenRecherche;
 
     private static ObservableList<Evenement> lesEvenements = FXCollections.observableArrayList();
 
@@ -35,6 +36,7 @@ public class Principale extends Application{
         fenCrTaches = new FenCrTaches();
         fenModEvent = new FenModEvent();
         fenModTaches = new FenModTaches();
+        fenRecherche = new FenRecherche();
         fenAccueil.show();
 
     }
@@ -75,6 +77,10 @@ public class Principale extends Application{
     }
     public static void ouvrirFenCrTaches(){fenCrTaches.show();}
     public static void ouvrirFenTaches(){fenTaches.show();}
+    public static void ouvrirFenRecherche(){
+        fenRecherche.show();
+        fenRecherche.effacer();
+    }
 
     public static void fermerFenAccueil() {System.exit(0);}
     public static void fermerFenTaches() {fenTaches.close();}
@@ -85,7 +91,7 @@ public class Principale extends Application{
         fenModEvent.close();
     }
     public static void fermerFenModTaches() {fenModTaches.close();}
-
+    public static void fermerFenRecherche(){fenRecherche.close();}
 
     //Ajout et suppression données
     static public void ajouterBenevole(Benevole b) {
@@ -106,6 +112,7 @@ public class Principale extends Application{
 
     static public void ajouterEvenement(Evenement e) {
         Donnees.ajouterEvenement(e);
+
     }
 
     static public void supprimerEvenement(Evenement e) {
