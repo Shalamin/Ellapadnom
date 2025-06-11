@@ -17,7 +17,7 @@
          </font>
       </Label>
       <TextField fx:id="trie" layoutX="43.0" layoutY="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="200.0" />
-      <DatePicker fx:id="selectSaison" layoutX="43.0" layoutY="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="200.0" />
+      <TextField fx:id="selectSaison" layoutX="43.0" layoutY="100.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="200.0" />
       <ComboBox fx:id="selectSalle" prefWidth="150.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="200.0" />
       <Label layoutX="43.0" layoutY="70.0" text="Trier par " AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="70.0" />
       <Button fx:id="bnValider" layoutX="472.0" layoutY="373.0" minWidth="100.0" mnemonicParsing="false" onAction="#valider" text="OK" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="30.0" />

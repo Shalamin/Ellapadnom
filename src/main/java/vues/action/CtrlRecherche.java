@@ -12,6 +12,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import modele.Evenement;
 import modele.Salle;
+import org.w3c.dom.Text;
 import vues.fenetres.FenAccueil;
 
 import java.util.Date;
@@ -29,11 +30,13 @@ public class CtrlRecherche {
     @FXML public Label sallesLabel;
     @FXML public ComboBox<String> choixTrie;
     @FXML public ComboBox<Salle> selectSalle;
-    @FXML public DatePicker selectSaison;
+    @FXML public TextField selectSaison;
+    public String saisonAct;
     @FXML private final ObservableList<Evenement> lesEvenementChercher  = FXCollections.observableArrayList();
     @FXML void valider(ActionEvent event){
         String texte = trie.getText();
-        String saisonAct = Integer.toString(selectSaison.getValue().getYear());
+        String saison = selectSaison.getText();
+
         switch (choixTrie.getValue()){
             case "Evenement":
                 for(int i = 0; i < Principale.getLesEvenements().size(); i++){
@@ -51,8 +54,7 @@ public class CtrlRecherche {
                 break;
             case "Saison":
                 for(int i = 0; i < Principale.getLesEvenements().size(); i++){
-                    if(Principale.getLesEvenements().get(i).getSaison().
-                            equalsIgnoreCase(saisonAct)){
+                    if(Principale.getLesEvenements().get(i).getSaison().equalsIgnoreCase(saison)){
                         lesEvenementChercher.add(Principale.getLesEvenements().get(i));
                     }
                 }
@@ -60,7 +62,7 @@ public class CtrlRecherche {
         }
         if(lesEvenementChercher.isEmpty()){
             Alert alert = new Alert(Alert.AlertType.ERROR ,"Aucun evenement trouvé.", ButtonType.CLOSE);
-            alert.setTitle("Erreur Saison");
+            alert.setTitle("Erreur trie");
             alert.show();
         }
         else{
@@ -76,6 +78,10 @@ public class CtrlRecherche {
         lesEvenementChercher.clear();
         selectSalle.setValue(null);
         choixTrie.setValue(null);
+        trie.setText("");
+        selectSaison.setText("");
+
+
     }
 
     @FXML void annuler(ActionEvent event){
@@ -88,21 +94,25 @@ public class CtrlRecherche {
         selectSalle.setItems(Principale.getLesSalles());
         BooleanBinding rien =
                 Bindings.equal(choixTrie.getSelectionModel().selectedIndexProperty(), -1);
-        bnValider.disableProperty().bind(rien);
+
         BooleanBinding event =
                 Bindings.equal(choixTrie.getSelectionModel().selectedIndexProperty(), 0);
         BooleanBinding saison =
                 Bindings.equal(choixTrie.getSelectionModel().selectedIndexProperty(), 1);
         BooleanBinding salles =
                 Bindings.equal(choixTrie.getSelectionModel().selectedIndexProperty(), 2);
-
+        BooleanBinding eventInvalide = trie.textProperty().isEmpty().and(event);
+        BooleanBinding saisonInvalide = selectSaison.textProperty().isEmpty().and(saison);
+        BooleanBinding salleInvalide = selectSalle.getSelectionModel().selectedIndexProperty().isEqualTo(-1).and(salles);
         eventLabel.visibleProperty().bind(event);
+
         saisonLabel.visibleProperty().bind(saison);
         sallesLabel.visibleProperty().bind(salles);
         selectSalle.visibleProperty().bind(salles);
         trie.visibleProperty().bind(event);
         selectSaison.visibleProperty().bind(saison);
 
+        bnValider.disableProperty().bind(rien.or(eventInvalide).or(saisonInvalide).or(salleInvalide));
 
     }
 
