@@ -42,7 +42,7 @@ public class CtrlModTaches {
         //Principale.ouvrirFenTaches();
         Principale.fermerFenModTaches();
     }
-    public void initialize(){
+    @FXML void initialize(){
         selectBen.setItems(Principale.getLesBenevoles());
 
         BooleanBinding pasPret = txtMatricule.textProperty().isEmpty()

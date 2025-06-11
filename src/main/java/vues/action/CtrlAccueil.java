@@ -4,6 +4,7 @@ package vues.action;
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
@@ -22,7 +23,7 @@ public class CtrlAccueil {
     @FXML private Button bnSupprimer;
     @FXML private Button bnTaches;
     @FXML private Button bnFermer;
-    @FXML private TableView<Evenement> tvListeEvenement;
+    @FXML public TableView<Evenement> tvListeEvenement;
 
     /* Relation avec le controleur */
     @FXML void clicFermer(ActionEvent event) {
@@ -59,6 +60,13 @@ public class CtrlAccueil {
             Principale.supprimerEvenement(tvListeEvenement.getSelectionModel().getSelectedItem());
         }
 
+    }
+    @FXML void clicRech(ActionEvent event){
+        Principale.ouvrirFenRecherche();
+    }
+    public void updateTable(ObservableList list){
+        tvListeEvenement.setItems(list);
+        tvListeEvenement.refresh();
     }
     @FXML void initialize() {
 
