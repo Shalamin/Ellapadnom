@@ -42,7 +42,7 @@ public class Alertes {
     }
 
     public static void afficherErreurModifEventDejaLa() {
-        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous devez faire en sorte que le nom et la saison soit différents d'un événement déjà existant", ButtonType.CLOSE);
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas changer l'année de la saison", ButtonType.CLOSE);
         alerte.setTitle("Erreur modifier événement ");
         alerte.show();
     }
