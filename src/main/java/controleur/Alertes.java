@@ -36,8 +36,14 @@ public class Alertes {
     }
 
     public static void afficherErreurEventDejaLa() {
-        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas créer cette tâche, elle existe déjà", ButtonType.CLOSE);
-        alerte.setTitle("Erreur événement ");
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas créer cet événement, il existe déjà", ButtonType.CLOSE);
+        alerte.setTitle("Erreur créer événement ");
+        alerte.show();
+    }
+
+    public static void afficherErreurModifEventDejaLa() {
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous devez faire en sorte que le nom et la saison soit différents d'un événement déjà existant", ButtonType.CLOSE);
+        alerte.setTitle("Erreur modifier événement ");
         alerte.show();
     }
 

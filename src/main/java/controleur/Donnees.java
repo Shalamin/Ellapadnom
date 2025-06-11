@@ -111,7 +111,7 @@ public class Donnees {
     static public void ajouterEvenement(Evenement e) {
         boolean ajout = true;
         for (Evenement event : lesEvenements) {
-            if (event.getNom().equals(e.getNom()) && event.getLaSalle().equals(e.getLaSalle()) && event.getType().equals(e.getType()) && event.getDate().equals(e.getDate()) && event.getSaison().equals(e.getSaison())) {
+            if (event.getNom().equals(e.getNom()) && event.getSaison().equals(e.getSaison())) {
                 Alertes.afficherErreurEventDejaLa();
                 ajout = false;
             }

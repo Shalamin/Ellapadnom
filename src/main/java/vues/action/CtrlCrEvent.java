@@ -1,5 +1,6 @@
 package vues.action;
 
+import controleur.Alertes;
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -33,14 +34,22 @@ public class CtrlCrEvent {
         Salle salle = (Salle) selectSalle.getValue();
         Benevole orga = (Benevole) selectBen.getValue();
 
+        boolean ajout = true;
+        for (Evenement e : Principale.getLesEvenements()) {
+            if (txtNom.getText().equals(e.getNom()) && saison.equals(e.getSaison())) {
+                Alertes.afficherErreurEventDejaLa();
+                ajout = false;
+            }
+        }
+        if (ajout) {
+            if(selectEvent.getSelectionModel().getSelectedItem() == "Gala"){
+                Principale.ouvrirFenCrGala(nom, dateFormat, saison, salle, orga);
+            } else if(selectEvent.getSelectionModel().getSelectedItem() == "Soirée dansante"){
+                SoireeDansante sd = new SoireeDansante(nom, dateFormat, saison, salle, orga);
+                Principale.ajouterUnEvent(sd);
+            }
+        }
 
-        if(selectEvent.getSelectionModel().getSelectedItem() == "Gala"){
-            Principale.ouvrirFenCrGala(nom, dateFormat, saison, salle, orga);
-        }
-        else if(selectEvent.getSelectionModel().getSelectedItem() == "Soirée dansante"){
-            SoireeDansante sd = new SoireeDansante(nom, dateFormat, saison, salle, orga);
-            Principale.ajouterUnEvent(sd);
-        }
 
     }
     @FXML void annuler(ActionEvent event){

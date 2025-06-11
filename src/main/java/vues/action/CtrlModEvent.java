@@ -1,5 +1,6 @@
 package vues.action;
 
+import controleur.Alertes;
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -29,12 +30,11 @@ public class CtrlModEvent {
         Salle laSalle = selectSalle.getSelectionModel().getSelectedItem();
         String laDate = date.getValue().toString();
         String saison = Integer.toString(date.getValue().getYear());
-        Principale.modifierEvenement(evenement, nom, laSalle, laDate, saison,  type);
-        Principale.ouvrirFenTaches(evenement);
-
-
-
-
+        if (!evenement.getSaison().equals(saison)) {
+            Alertes.afficherErreurModifEventDejaLa();
+        } else {
+            Principale.modifierEvenement(evenement, nom, laSalle, laDate, saison,  type);
+        }
     }
     @FXML void annuler(ActionEvent event){
         Principale.fermerFenModEvent();
