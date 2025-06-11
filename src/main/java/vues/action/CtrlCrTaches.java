@@ -25,8 +25,9 @@ public class CtrlCrTaches {
     @FXML void valider(ActionEvent event) {
         String nom = txtMatricule.getText();
         Benevole benevole = (Benevole) selectBenevole.getValue();
-        if (evenement.getLesBenevoles().containsKey(nom) && evenement.getLesBenevoles().containsValue(benevole)) {
+        if (evenement.getLesBenevoles().containsKey(nom)) {
             Alertes.afficherErreurTacheDejaLa();
+            Principale.fermerFenModTaches();
         } else {
             Principale.ajouterTache(nom, benevole, evenement);
             Principale.ouvrirFenTaches(evenement);

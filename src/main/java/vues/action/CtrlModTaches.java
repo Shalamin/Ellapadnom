@@ -5,9 +5,7 @@ import controleur.Principale;
 import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import modele.Benevole;
 import modele.Evenement;
 
@@ -29,14 +27,22 @@ public class CtrlModTaches {
         String nouvelleTache = txtMatricule.getText();
         Benevole nouveauBenevole = selectBen.getValue();
 
-        if (ancienneTache == "Organisateur") {
-            Alertes.afficherErreurSupprOrganisateur();
-        } else if(evenement.getLesBenevoles().containsKey(nouvelleTache) && evenement.getLesBenevoles().containsValue(nouveauBenevole)){
-            Alertes.afficherErreurTacheDejaLa();
-        } else {
+
+        if(ancienneTache.equals("Organisateur")){
+            Alert alerte = new Alert(Alert.AlertType.ERROR, "ERREUR : Ne pas modifier l'organisateur", ButtonType.CLOSE);
+            alerte.show();
+            Principale.fermerFenModTaches();
+            Principale.ouvrirFenTaches();
+        } else if(nouvelleTache.equals("Organisateur")){
+            Alert alerte = new Alert(Alert.AlertType.ERROR, "ERREUR : Il y a déjà un organisateur", ButtonType.CLOSE);
+            alerte.show();
+        } else{
             Principale.modifierTache(ancienneTache, ancienBenevole, nouvelleTache, nouveauBenevole, evenement);
             Principale.ouvrirFenTaches(evenement);
+            Principale.fermerFenModTaches();
         }
+
+
     }
     @FXML void annuler(ActionEvent event){
         //Principale.ouvrirFenTaches();

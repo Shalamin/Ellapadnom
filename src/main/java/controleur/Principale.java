@@ -145,7 +145,6 @@ public class Principale extends Application{
 
 
     public static void ajouterUnEvent(Evenement e){
-
         Donnees.ajouterEvenement(e);
         if(fenCrGala.isShowing()){
             fenCrGala.close();
@@ -164,11 +163,7 @@ public class Principale extends Application{
             System.out.println("SOIREE");
 
         }
-
-
-
         fenModEvent.close();
-
     }
 
     public static void ajouterTache(String t, Benevole b, Evenement e){

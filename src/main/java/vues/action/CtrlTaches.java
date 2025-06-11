@@ -1,5 +1,6 @@
 package vues.action;
 
+import controleur.Alertes;
 import controleur.Principale;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.BooleanBinding;
@@ -61,7 +62,7 @@ public class CtrlTaches {
         Map.Entry<String, Benevole> selection = tableTaches.getSelectionModel().getSelectedItem();
 
         if (Objects.equals(selection.getKey(), "Organisateur")){
-            System.out.println("Peux pas suprimer un organisateur");
+            Alertes.afficherErreurSupprOrganisateur();
         } else {
             Alert alert =  new Alert(Alert.AlertType.CONFIRMATION,
                     "Voulez-vous vraiment supprimer cette tâches?",
@@ -115,6 +116,7 @@ public class CtrlTaches {
                         (Benevole) change.getValueAdded()
                 ));
             }
+            liste.setAll(e.getLesBenevoles().entrySet());
         });
         //FIN DE LA PARTIE CHAT GPT
 

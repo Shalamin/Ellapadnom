@@ -24,13 +24,13 @@ public class Alertes {
     }
 
     public static void afficherErreurSupprOrganisateur() {
-        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas changer le rôle de l'organisateur.", ButtonType.CLOSE);
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas supprimer le rôle de l'organisateur.", ButtonType.CLOSE);
         alerte.setTitle("Erreur tache Organisateur");
         alerte.show();
     }
 
     public static void afficherErreurTacheDejaLa() {
-        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas attribuer la même tâche à la même personne", ButtonType.CLOSE);
+        Alert alerte = new Alert(Alert.AlertType.ERROR, "ATTENTION : Vous ne pouvez pas créer cette tache car elle existe déjà", ButtonType.CLOSE);
         alerte.setTitle("Erreur tache ");
         alerte.show();
     }
