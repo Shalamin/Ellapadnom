@@ -136,7 +136,7 @@ public class Donnees {
 
         int i=0;
         while (!trouve && i<lesEvenements.size()) {
-            if ( lesEvenements.get(i).getNom().equals(e.getNom())){
+            if ( lesEvenements.get(i).getNom().equals(e.getNom()) && lesEvenements.get(i).getSaison().equals(e.getSaison())){
                 lesEvenements.set(i, e);
 
                 trouve = true;
@@ -152,7 +152,7 @@ public class Donnees {
     //TACHES
     static public void ajouterTache(String t, Benevole b, Evenement e) {
         for (Evenement event : lesEvenements ) {
-            if (event.getNom().equals(e.getNom()) && event.getLaSalle().equals(e.getLaSalle()) && event.getType().equals(e.getType()) && event.getDate().equals(e.getDate()) && event.getSaison().equals(e.getSaison())) {
+            if (event.getNom().equals(e.getNom()) && event.getSaison().equals(e.getSaison())) {
                 event.affecterTache(t, b);
             }
         }

@@ -29,8 +29,14 @@ public class CtrlModEvent {
         Salle laSalle = selectSalle.getSelectionModel().getSelectedItem();
         String laDate = date.getValue().toString();
         String saison = Integer.toString(date.getValue().getYear());
-        Principale.modifierEvenement(evenement, nom, laSalle, laDate, saison,  type);
-        Principale.ouvrirFenTaches(evenement);
+        if(evenement.getSaison().equals(saison)){
+            System.out.println("c bon");
+            Principale.modifierEvenement(evenement, nom, laSalle, laDate, saison,  type);
+        }
+        else{
+            System.out.println("explosion");
+        }
+
 
 
 
