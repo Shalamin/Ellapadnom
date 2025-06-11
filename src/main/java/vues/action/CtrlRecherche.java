@@ -64,6 +64,7 @@ public class CtrlRecherche {
             Alert alert = new Alert(Alert.AlertType.ERROR ,"Aucun evenement trouvé.", ButtonType.CLOSE);
             alert.setTitle("Erreur trie");
             alert.show();
+            FenAccueil.updateTable(Principale.getLesEvenements());
         }
         else{
             FenAccueil.updateTable(lesEvenementChercher);
