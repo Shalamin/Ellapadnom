@@ -27,18 +27,18 @@ public class CtrlHisto {
 
     @FXML void initialize() {
 
-        TableColumn<Benevole,String> colonne1 = new TableColumn<>("Benevole");
+        TableColumn<Benevole,String> colonne1 = new TableColumn<>("Nom");
         colonne1.setCellValueFactory(new PropertyValueFactory<>("nom"));
         tvListeBenevoles.getColumns().set(0, colonne1);
         TableColumn<Benevole, Salle> colonne2 = new TableColumn<>("Prenom");
         colonne2.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         tvListeBenevoles.getColumns().set(1, colonne2);
         TableColumn<Benevole, Salle> colonne3 = new TableColumn<>("Tâche");
-        colonne2.setCellValueFactory(new PropertyValueFactory<>("tache"));
-        tvListeBenevoles.getColumns().set(2, colonne2);
+        colonne3.setCellValueFactory(new PropertyValueFactory<>("tache"));
+        tvListeBenevoles.getColumns().set(2, colonne3);
         TableColumn<Benevole, Salle> colonne4 = new TableColumn<>("Saison");
-        colonne2.setCellValueFactory(new PropertyValueFactory<>("saison"));
-        tvListeBenevoles.getColumns().set(3, colonne2);
+        colonne4.setCellValueFactory(new PropertyValueFactory<>("saison"));
+        tvListeBenevoles.getColumns().set(3, colonne4);
         tvListeBenevoles.setItems(Principale.getLesBenevoles());
         tvListeBenevoles.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
 
