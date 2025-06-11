@@ -27,7 +27,6 @@ public class CtrlModTaches {
         String nouvelleTache = txtMatricule.getText();
         Benevole nouveauBenevole = selectBen.getValue();
 
-
         if(ancienneTache.equals("Organisateur")){
             Alert alerte = new Alert(Alert.AlertType.ERROR, "ERREUR : Ne pas modifier l'organisateur", ButtonType.CLOSE);
             alerte.show();

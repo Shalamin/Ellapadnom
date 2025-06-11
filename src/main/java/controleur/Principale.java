@@ -167,17 +167,21 @@ public class Principale extends Application{
     }
 
     public static void ajouterTache(String t, Benevole b, Evenement e){
-        e.affecterTache(t, b);
+        b.ajouterEventTache(e, t);
+        System.out.println(b.getMesEvents());
         Donnees.ajouterTache(t, b, e);
         fenCrTaches.close();
     }
 
     public static void modifierTache(String ancienneTache, Benevole ancienBenevole,
                                      String nouvelleTache, Benevole nouveauBenevole, Evenement e) {
+        ancienBenevole.retirerEventTache(ancienneTache, e);
+        nouveauBenevole.ajouterEventTache(e, nouvelleTache);
         Donnees.modifierTache(ancienneTache, ancienBenevole, nouvelleTache, nouveauBenevole, e);
     }
 
     public static void supprimerTache(String nomTache, Benevole benevole, Evenement evenement){
+        benevole.retirerEventTache(nomTache, evenement);
         Donnees.supprimerTache(nomTache, benevole, evenement);
     }
 }

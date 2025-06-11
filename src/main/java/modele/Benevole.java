@@ -48,7 +48,7 @@ public class Benevole {
             }
         }
     }
-    void retirerEventTache( String tache, Evenement e){
+    public void retirerEventTache( String tache, Evenement e){
         mesEvents.remove(tache, e);
     }
     void ajouterEvent(Evenement e){
